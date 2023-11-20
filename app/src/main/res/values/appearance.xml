@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AndroidHeading1SemiBold26">
+        <item name="android:fontFamily">@font/pretendard_semi_bold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="AndroidHearding2Extrabold20">
+        <item name="android:fontFamily">@font/pretendard_extra_bold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AndroidHeading3Semibold18">
+        <item name="android:fontFamily">@font/pretendard_semi_bold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AndroidTitleSemibold14">
+        <item name="android:fontFamily">@font/pretendard_semi_bold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AndroidTitleRegular14">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AndroidBodyRegular14">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.05</item>
+    </style>
+
+    <style name="AndroidTitleLight14">
+        <item name="android:fontFamily">@font/pretendard_light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AndroidBodySmallLight14">
+        <item name="android:fontFamily">@font/pretendard_light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AndroidCaptionSemibold12">
+        <item name="android:fontFamily">@font/pretendard_semi_bold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.07</item>
+    </style>
+
+    <style name="AndroidCaptionRegular12">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="AndroidCaptionSmallRegular10">
+        <item name="android:fontFamily">@font/pretendard_small_light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="AndroidStrikethroughRegular10">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">-0.9sp</item>
+    </style>
+
+    <style name="AndroidTextButtonDeaultSemibold8">
+        <item name="android:fontFamily">@font/pretendard_semi_bold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">8.4sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+</resources>
