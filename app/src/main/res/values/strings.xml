@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ChicoryAOS</string>
+    <!-- detail-->
+    <string name="detail_btn_purchase">구매하기</string>
+</resources>
