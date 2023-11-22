@@ -25,7 +25,6 @@ class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_
 
     private fun initPurchaseBtnClickListener() {
         binding.btnDetailPurchase.setOnClickListener {
-            // TODO(구매하기 클릭시)
             val purchaseBottomSheet = PurchaseFragment()
             purchaseBottomSheet.show(supportFragmentManager, PurchaseFragment.TAG)
         }
