@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.chicoryaos.databinding.BottomSheetFragmentPurchaseBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -12,6 +13,8 @@ class PurchaseFragment : BottomSheetDialogFragment() {
     private var _binding: BottomSheetFragmentPurchaseBinding? = null
     private val binding: BottomSheetFragmentPurchaseBinding
         get() = requireNotNull(_binding)
+
+    private val viewModel by viewModels<PurchaseViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,14 +27,21 @@ class PurchaseFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initDataBinding()
     }
 
-    companion object {
-        const val TAG = "BottomSheetPurchase"
+    private fun initDataBinding() {
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
     }
 
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    companion object {
+        const val TAG = "BottomSheetPurchase"
     }
 }
