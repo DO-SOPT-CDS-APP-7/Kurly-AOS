@@ -16,13 +16,13 @@ class PurchaseViewModel : ViewModel() {
     }
 
     fun countIncrease() {
-        count.postValue(count.value?.plus(1))
+        count.value = count.value?.plus(1)
         calculatePrice()
     }
 
     fun countDecrease() {
         if (count.value!! > 1) {
-            count.postValue(count.value?.minus(1))
+            count.value = count.value?.minus(1)
         }
         calculatePrice()
     }
@@ -36,5 +36,6 @@ class PurchaseViewModel : ViewModel() {
 
     fun setPurchasePrice(newPrice: Int) {
         price = newPrice
+        calculatePrice()
     }
 }
