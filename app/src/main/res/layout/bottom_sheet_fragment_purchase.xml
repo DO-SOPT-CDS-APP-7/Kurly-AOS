@@ -95,10 +95,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="4,720원"
+            android:text="@{viewModel.calculatePrice.toString() + '원'}"
             android:textColor="@color/ku_gray6"
             app:layout_constraintStart_toStartOf="@id/tv_middle_title"
-            app:layout_constraintTop_toBottomOf="@id/tv_middle_title" />
+            app:layout_constraintTop_toBottomOf="@id/tv_middle_title"
+            tools:text="4,720원" />
 
         <TextView
             android:id="@+id/tv_original_price"
@@ -142,7 +143,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="?android:attr/selectableItemBackground"
-                    android:onClick="@{()->viewModel.decrease()}"
+                    android:onClick="@{()->viewModel.countDecrease()}"
                     android:paddingVertical="6dp"
                     android:paddingStart="6dp"
                     android:paddingEnd="5dp"
@@ -170,7 +171,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="?android:attr/selectableItemBackground"
-                    android:onClick="@{()->viewModel.increase()}"
+                    android:onClick="@{()->viewModel.countIncrease()}"
                     android:paddingVertical="6dp"
                     android:paddingStart="5dp"
                     android:paddingEnd="6dp"
@@ -241,13 +242,14 @@
             android:layout_marginTop="27dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/shape_purple_fill_4_rect"
-            android:text="@string/detail_btn_purchase"
+            android:text="@{@string/purchase_price_text(viewModel.calculatePrice.toString())}"
             android:textColor="@color/ku_white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mcv_save_yello"
-            app:layout_constraintVertical_bias="0.497" />
+            app:layout_constraintVertical_bias="0.497"
+            tools:text="구매하기" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

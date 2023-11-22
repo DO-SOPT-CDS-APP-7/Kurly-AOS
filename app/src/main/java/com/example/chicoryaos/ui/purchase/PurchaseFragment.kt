@@ -29,6 +29,7 @@ class PurchaseFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initDataBinding()
+        viewModel.setPurchasePrice(1000)
     }
 
     private fun initDataBinding() {
