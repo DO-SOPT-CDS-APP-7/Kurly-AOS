@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Material3.BottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mv_drag_handle"
+        android:layout_width="30dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/ku_light_gray_drag_handler"
+        android:visibility="visible"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintBottom_toTopOf="@id/img_purchase_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="0dp" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_purchase_item"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/ku_gray3"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mv_drag_handle"
+        app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerRadius2and5" />
+
+    <TextView
+        android:id="@+id/tv_img_title"
+        style="@style/AndroidBodyRegular14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:letterSpacing="-0.045"
+        android:text="[전주 베테랑] 칼국수"
+        android:textColor="@color/ku_gray6"
+        app:layout_constraintBottom_toTopOf="@id/tv_img_sub_title"
+        app:layout_constraintStart_toEndOf="@id/img_purchase_item"
+        app:layout_constraintTop_toTopOf="@id/img_purchase_item" />
+
+    <TextView
+        android:id="@+id/tv_img_sub_title"
+        style="@style/AndroidCaptionRegular12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="베테랑의 대표 메뉴를 집에서"
+        android:textColor="@color/ku_gray5"
+        app:layout_constraintBottom_toBottomOf="@id/img_purchase_item"
+        app:layout_constraintStart_toEndOf="@id/img_purchase_item"
+        app:layout_constraintStart_toStartOf="@id/tv_img_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_img_title" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="30dp"
+        app:dividerColor="@color/ku_gray2"
+        app:layout_constraintTop_toBottomOf="@id/img_purchase_item" />
+
+    <TextView
+        android:id="@+id/tv_middle_title"
+        style="@style/AndroidBodyRegular14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="18dp"
+        android:letterSpacing="-0.045"
+        android:text="[전주 베테랑] 칼국수"
+        android:textColor="@color/ku_gray6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_top" />
+
+    <TextView
+        android:id="@+id/tv_sale_price"
+        style="@style/AndroidCaptionSemibold12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="4,720원"
+        android:textColor="@color/ku_gray6"
+        app:layout_constraintStart_toStartOf="@id/tv_middle_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_middle_title" />
+
+    <TextView
+        android:id="@+id/tv_original_price"
+        style="@style/AndroidStrikethroughRegular10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="4,720원"
+        android:textColor="@color/ku_gray5"
+        app:layout_constraintBottom_toBottomOf="@id/tv_sale_price"
+        app:layout_constraintStart_toEndOf="@id/tv_sale_price"
+        app:layout_constraintTop_toTopOf="@id/tv_sale_price" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/ku_gray5"
+        app:layout_constraintBottom_toBottomOf="@id/tv_original_price"
+        app:layout_constraintEnd_toEndOf="@id/tv_original_price"
+        app:layout_constraintStart_toStartOf="@id/tv_original_price"
+        app:layout_constraintTop_toTopOf="@id/tv_original_price" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/frame_plus_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_sale_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_sale_price"
+        app:strokeColor="@color/ku_gray4"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_minus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingVertical="6dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="5dp"
+                android:src="@drawable/ic_button_minus"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_count_num"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_count_num"
+                style="@style/AndroidTitleSemibold14"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="12dp"
+                android:gravity="center"
+                android:text="@string/purchase_num_zero"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_plus"
+                app:layout_constraintStart_toEndOf="@id/btn_minus"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingVertical="6dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="6dp"
+                android:src="@drawable/ic_button_plus"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_count_num"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="21dp"
+        app:dividerColor="@color/ku_gray2"
+        app:layout_constraintTop_toBottomOf="@id/frame_plus_minus" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv_save_yello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="6dp"
+        android:backgroundTint="@color/ku_yellow"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toStartOf="@id/tv_str_save_description"
+        app:layout_constraintTop_toBottomOf="@id/divider_bottom"
+        app:strokeWidth="0dp">
+
+        <TextView
+            style="@style/AndroidTextButtonDeaultSemibold8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="3dp"
+            android:text="@string/purchase_str_ave"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_str_save_description"
+        style="@style/AndroidCaptionSemibold12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="3dp"
+        android:text="@string/purchase_str_save_description"
+        android:textColor="@color/ku_gray5"
+        app:layout_constraintBottom_toBottomOf="@id/mcv_save_yello"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mcv_save_yello" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_detail_purchase"
+        style="@style/AndroidTitleSemibold14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/shape_purple_fill_4_rect"
+        android:text="@string/detail_btn_purchase"
+        android:textColor="@color/ku_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mcv_save_yello" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
