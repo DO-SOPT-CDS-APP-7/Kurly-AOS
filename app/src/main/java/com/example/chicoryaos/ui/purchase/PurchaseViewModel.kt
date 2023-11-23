@@ -12,22 +12,22 @@ class PurchaseViewModel : ViewModel() {
 
     init {
         count.value = 1
-        calculatePrice()
+        updateTotalPrice()
     }
 
     fun countIncrease() {
         count.value = count.value?.plus(1)
-        calculatePrice()
+        updateTotalPrice()
     }
 
     fun countDecrease() {
         if (count.value!! > 1) {
             count.value = count.value?.minus(1)
         }
-        calculatePrice()
+        updateTotalPrice()
     }
 
-    private fun calculatePrice() {
+    private fun updateTotalPrice() {
         val totalCount = count.value ?: 0
         val totalPrice = totalCount * price
         val formatTotalPrice = PriceFormatter.formatPrice(totalPrice)
@@ -36,6 +36,6 @@ class PurchaseViewModel : ViewModel() {
 
     fun setPurchasePrice(newPrice: Int) {
         price = newPrice
-        calculatePrice()
+        updateTotalPrice()
     }
 }

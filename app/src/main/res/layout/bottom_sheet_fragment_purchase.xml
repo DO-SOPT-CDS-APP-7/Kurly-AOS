@@ -17,7 +17,7 @@
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/mv_drag_handle"
+            android:id="@+id/mcv_purchase_drag_handle"
             android:layout_width="30dp"
             android:layout_height="5dp"
             android:layout_marginTop="16dp"
@@ -39,7 +39,7 @@
             android:background="@color/ku_gray3"
             app:layout_constraintDimensionRatio="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mv_drag_handle"
+            app:layout_constraintTop_toBottomOf="@id/mcv_purchase_drag_handle"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerRadius2and5" />
 
         <TextView
@@ -95,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@{viewModel.calculatePrice + '원'}"
+            android:text="@{@string/purchase_won_text(viewModel.calculatePrice)}"
             android:textColor="@color/ku_gray6"
             app:layout_constraintStart_toStartOf="@id/tv_middle_title"
             app:layout_constraintTop_toBottomOf="@id/tv_middle_title"
@@ -107,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:text="@{viewModel.calculatePrice + '원'}"
+            android:text="@{@string/purchase_won_text(viewModel.calculatePrice)}"
             android:textColor="@color/ku_gray5"
             app:layout_constraintBottom_toBottomOf="@id/tv_sale_price"
             app:layout_constraintStart_toEndOf="@id/tv_sale_price"
@@ -232,7 +232,6 @@
             app:layout_constraintBottom_toBottomOf="@id/mcv_save_yello"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/mcv_save_yello" />
-
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_detail_purchase"
