@@ -15,4 +15,8 @@
         <!-- Remove font padding. -->
         <item name="android:includeFontPadding">false</item>
     </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerRadius2and5" parent="">
+        <item name="cornerSize">2.5dp</item>
+    </style>
 </resources>

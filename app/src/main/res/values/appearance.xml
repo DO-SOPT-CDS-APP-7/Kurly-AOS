@@ -84,4 +84,10 @@
         <item name="android:letterSpacing">0</item>
     </style>
 
+
+    <!-- item -->
+    <style name="Radius10">
+        <item name="cornerSize">4dp</item>
+    </style>
+
 </resources>
