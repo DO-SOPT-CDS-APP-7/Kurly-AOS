@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
@@ -13,9 +12,9 @@
         android:layout_width="98dp"
         android:layout_height="124dp"
         android:scaleType="centerCrop"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/Radius10"
         tools:src="@drawable/ku_dummy" />
 
@@ -24,30 +23,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="8dp"
-        tools:src="@drawable/ic_button_keep"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_item_wish_list">
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@id/iv_item_wish_list"
+        tools:src="@drawable/ic_button_keep"></ImageView>
 
     <TextView
-        style="@style/AndroidCaptionSmallRegular10"
         android:id="@+id/iv_item_wish_list_ment"
+        style="@style/AndroidCaptionSmallRegular10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="샛별배송"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_item_wish_list_keep"/>
+        app:layout_constraintTop_toBottomOf="@id/iv_item_wish_list_keep" />
 
     <TextView
-        style="@style/AndroidCaptionRegular12"
         android:id="@+id/iv_item_wish_list_title"
+        style="@style/AndroidCaptionRegular12"
         android:layout_width="98dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="[시골보쌈과 감자옹심이]감자..."
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_item_wish_list_ment"/>
+        app:layout_constraintTop_toBottomOf="@id/iv_item_wish_list_ment" />
 
     <TextView
         android:id="@+id/iv_item_sale_price"

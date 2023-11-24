@@ -5,4 +5,5 @@
 
     <!-- wish list -->
     <string name="wish_list_other_consumer_title">다른 고객이 함께 본 상품</string>
+    <string name="wish_list_puchase_with_title">함께 구매하면 좋은 상품</string>
 </resources>
