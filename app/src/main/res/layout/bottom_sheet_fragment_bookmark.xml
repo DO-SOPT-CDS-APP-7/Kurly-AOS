@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_wish_list_other_consumer_title"
-        tools:listitem="@layout/item_wish_list_product" />
+        tools:listitem="@layout/item_bookmark_product" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/md_wish_list_divider"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_wish_list_puchase_with_title"
-        tools:listitem="@layout/item_wish_list_product" />
+        tools:listitem="@layout/item_bookmark_product" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_wish_list_detail_relative"
