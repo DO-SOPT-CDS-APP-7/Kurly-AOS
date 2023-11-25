@@ -93,7 +93,7 @@
         android:layout_marginTop="27dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/shape_purple_fill_4_rect"
-        android:text="연관상품 더보기"
+        android:text="@string/wish_list_btn_detail_relative"
         android:textColor="@color/ku_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
