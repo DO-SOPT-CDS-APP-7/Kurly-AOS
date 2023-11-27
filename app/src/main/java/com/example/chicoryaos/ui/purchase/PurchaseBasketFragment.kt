@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.chicoryaos.databinding.BottomSheetFragmentPurchaseBasketBinding
+import com.example.chicoryaos.util.extensions.AnimateProgressBar
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class PurchaseBasketFragment : BottomSheetDialogFragment() {
@@ -29,12 +30,20 @@ class PurchaseBasketFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initDataBinding()
-//        viewModel.setPurchasePrice(1000)
+        initProgressAnimation()
     }
 
     private fun initDataBinding() {
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.viewModel = viewModel
+        binding.vm = viewModel
+    }
+
+    private fun initProgressAnimation() {
+        val progressBar = binding.pgBasket
+        val anim =
+            AnimateProgressBar(progressBar, 0f, (viewModel.purchaseProgress.value ?: 0).toFloat())
+        anim.duration = 1500
+        progressBar.startAnimation(anim)
     }
 
     override fun onDestroyView() {
