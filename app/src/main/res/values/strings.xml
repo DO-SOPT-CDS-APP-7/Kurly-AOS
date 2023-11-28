@@ -51,4 +51,11 @@
     <string name="detail_brand_title_eng">Recommendation</string>
     <string name="detail_brand_content_1">전주 식도락 여행의 필수 코스, 베테랑</string>
 
+    <!-- purchase -->
+    <string name="purchase_str_ave">적립</string>
+    <string name="purchase_str_save_description">로그인 후, 적립 혜택 제공</string>
+    <string name="purchase_num_zero">0</string>
+    <string name="purchase_price_text">%s원 장바구니 담기</string>
+    <string name="purchase_won_text">%s원</string>
+
 </resources>
