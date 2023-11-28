@@ -9,8 +9,10 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="ku_purple">#FF5F0080</color>
+    <color name="ku_background_gray">#FFF5F5F5</color>
     <color name="ku_purple3">#FF853E9E</color>
     <color name="ku_purple2">#FFC282FC</color>
+    <color name="ku_purple2_10">#26C282FC</color>
     <color name="ku_purple1">#FFF2F1F6</color>
     <color name="ku_orange">#FFF96231</color>
     <color name="ku_yellow">#FFFFBE00</color>
