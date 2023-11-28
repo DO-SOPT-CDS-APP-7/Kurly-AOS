@@ -4,7 +4,7 @@
     <string name="detail_btn_purchase">구매하기</string>
 
     <!-- bookmark toast -->
-    <string name="toast_bookmark_plus_ment">찜한 상품에 추가했어요</string>
-    <string name="toast_bookmark_go_ment">바로가기</string>
-    <string name="toast_bookmark_delete_ment">찜한 상품에서 삭제했어요</string>
+    <string name="snackbar_bookmark_plus_ment">찜한 상품에 추가했어요</string>
+    <string name="snackbar_bookmark_go_ment">바로가기</string>
+    <string name="snackbar_bookmark_delete_ment">찜한 상품에서 삭제했어요</string>
 </resources>
