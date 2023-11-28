@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 object BindingAdapter {
     @BindingAdapter("setImage")
     @JvmStatic
-    fun ImageView.setImage(imgUrl: String) {
+    fun ImageView.setImage(imgUrl: String?) {
         this.let {
             Glide.with(context)
                 .load(imgUrl)

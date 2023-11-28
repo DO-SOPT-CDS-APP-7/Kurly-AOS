@@ -42,6 +42,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="11dp"
                 android:layout_marginBottom="10dp"
+                android:text="@{vm.produce.productName}"
                 app:layout_constraintStart_toEndOf="@id/btn_detail_top_bar_back"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="[전주 베테랑] 칼국수" />
@@ -154,6 +155,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
+                    android:text="@{String.valueOf(vm.produce.discountRate)}"
                     android:textColor="@color/ku_orange"
                     app:layout_constraintStart_toStartOf="@id/tv_detail_delivery_type"
                     app:layout_constraintTop_toBottomOf="@id/tv_detail_item_script"
@@ -341,7 +343,7 @@
                     style="@style/AndroidCaptionSemibold12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/detail_seller_content"
+                    android:text="@{vm.produce.sellerName}"
                     app:layout_constraintBottom_toBottomOf="@id/tv_detail_seller_title"
                     app:layout_constraintStart_toStartOf="@id/tv_detail_transfer_content"
                     app:layout_constraintTop_toTopOf="@id/tv_detail_seller_title" />

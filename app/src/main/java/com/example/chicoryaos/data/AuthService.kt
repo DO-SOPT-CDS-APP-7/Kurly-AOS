@@ -7,7 +7,5 @@ import retrofit2.http.Path
 
 interface AuthService {
     @GET("product/{productId}")
-    fun getProduct(
-        @Path("productId") productId: String,
-    ): Call<ResponseProductDTO>
+    fun getProduct(@Path("productId") productId: Int): Call<ResponseProductDTO>
 }

@@ -17,7 +17,7 @@ data class ResponseProductDTO(
         @SerialName("deliveryType")
         val deliveryType: String = "",
         @SerialName("productName")
-        val productName: String = "'",
+        val productName: String = "",
         @SerialName("discountRate")
         val discountRate: Int = 0,
         @SerialName("originalPrice")
@@ -27,6 +27,6 @@ data class ResponseProductDTO(
         @SerialName("sellerName")
         val sellerName: String = "",
         @SerialName("imageURL")
-        val imageURL: String = ""
+        val imageURL: String? = ""
     )
 }
