@@ -1,7 +1,57 @@
 <resources>
     <string name="app_name">ChicoryAOS</string>
+    <!-- kurly -->
+    <string name="ku_percent">%</string>
+    <string name="ku_won">원</string>
+    <string name="other_consumer_title">다른 고객이 함께 본 상품</string>
+
     <!-- detail-->
     <string name="detail_btn_purchase">구매하기</string>
+    <string name="detail_transfer_content_detail">22시 전 주문 시 내일 아침 7시 전 도착 \n(대구·부산·울산 샛별배송 운영시간 별도 확인)</string>
+    <string name="detail_packaging_content">냉동 (종이포장)\n택배배송은 에코 포장이 스티로폼으로대체됩니다.</string>
+    <string name="detail_item_discription">전주로 가면 빼놓지 않고 들려야 하는 맛집 중 하나가 바로 베테랑인데요. 이곳의 인기 메뉴는 들개, 김, 고추가루를 툭 얹어낸 칼국수예요. 담백한 담은새와 달리, 요모조모 특별한 점이많답니다. 사골, 멸치 육수를 사용하는 보통의 칼국수와 다르게 간장으로 맛을 내 깔끔하고 맑은 국물이 돋보이고요. 납작하지 않고 둥근 모양의 면발을 후루룩 넘기는 식감도 경쾌하지요. 면 반죽을 6회 이상 꾹꾹 눌러 만들었기에 씹히는 찰기와탱글함도 남다르답니다. 따끈하게 조리한 칼국수에 따로 준비한 날계란을 술술 풀어주면, 매장에서 먹던 그 맛을 그대로 즐길 수 있을 거예요.</string>
+    <string name="navi_product_description">상품설명</string>
+    <string name="navi_detail_description">상세정보</string>
+    <string name="navi_review">후기 9999+</string>
+    <string name="navi_inquiry">문의</string>
+    <string name="detail_reserves_num">2,000원</string>
+    <string name="detail_reserves_ment">적립금 + 할인 쿠폰 받고 구매하기</string>
+    <string name="detail_cooupon_ment">간편식 특가 위크 3천원 쿠폰 받기</string>
+    <string name="detail_delivery">배송</string>
+    <string name="detail_transfer_content">샛별배송</string>
+    <string name="detail_seller_title">판매자</string>
+    <string name="detail_seller_content">컬리</string>
+    <string name="detail_product_info">상품정보</string>
+    <string name="detail_packaging_type_title">포장타입</string>
+    <string name="detail_sale_unit_title">판매단위</string>
+    <string name="detail_sale_unit_content">1팩</string>
+    <string name="detail_volume_title">중량/용량</string>
+    <string name="detail_volume_content">196.5g</string>
+    <string name="detail_origin_title">원산지</string>
+    <string name="detail_origin_content">상품설명/상세정보 참조</string>
+    <string name="detail_allergy_title">알레르기정보</string>
+    <string name="detail_allergy_content">-베테랑 칼국수: 밀 함유\n-베테랑 맛간장소스: 대두, 밀 함유\n-이 제품은 메밀, 새우, 달걀, 우유, 땅콩, 고등어,\n게, 돼지고기, 소고기, 닭고기, 복숭아, 아황산류,\n토마토, 호두, 오징어, 조개류(굴, 전복, 홍합 포함),\n잣을 사용한 제품과 같은 제조 시설에서 제조하고\n있습니다.</string>
+    <string name="detail_expiration_date_title">유통기한(또\n는 소비기한)\n정보</string>
+    <string name="detail_expiration_date_content">수령일 포함 최소 165일 이상 남은 제품을 보내\n드립니다.</string>
+    <string name="detail_item_detail_subtitle">베테랑의 대표메뉴를 집에서</string>
+    <string name="detail_item_detail_title">[전주 베테랑]</string>
+    <string name="detail_item_detail_title_name">칼국수</string>
+    <string name="detail_kurly_check_point">Kurly’s Check Point</string>
+    <string name="detail_process_title">생산 유통 과정</string>
+    <string name="detail_process_title_eng">Process</string>
+    <string name="detail_process_content_1">간장으로 깔끔하게 맛을 낸 국물</string>
+    <string name="detail_process_content_2">매장 노하우 그대로 6번 반죽한 둥근 면발</string>
+    <string name="detail_process_content_3">국산 통들깨, 가루 배합으로 식감과 풍미 보존</string>
+    <string name="detail_process_content_4">HACCP 인증 시설에서 위생적으로 생산</string>
+    <string name="detail_recommend_title">활용법</string>
+    <string name="detail_recommend_title_eng">Recommendation</string>
+    <string name="detail_recommend_content_1">집에서 간편하게 즐기는 유명 맛집의 메뉴</string>
+    <string name="detail_recommend_content_2">밥을 곁들여 한층 더 든든한 한끼로</string>
+    <string name="detail_brand_title">활용법</string>
+    <string name="detail_brand_title_eng">Recommendation</string>
+    <string name="detail_brand_content_1">전주 식도락 여행의 필수 코스, 베테랑</string>
+
+    <!-- purchase -->
     <string name="purchase_str_ave">적립</string>
     <string name="purchase_str_save_description">로그인 후, 적립 혜택 제공</string>
     <string name="purchase_num_zero">0</string>

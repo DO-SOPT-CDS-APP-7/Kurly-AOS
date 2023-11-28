@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.ChicoryAOS" parent="Theme.Material3.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/ku_white</item>
-        <item name="colorPrimaryVariant">@color/ku_white</item>
+        <item name="colorPrimary">@color/ku_purple</item>
+        <item name="colorPrimaryVariant">@color/ku_background_gray</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
