@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.chicoryaos.databinding.BottomSheetFragmentPurchaseBasketBinding
+import com.example.chicoryaos.model.PriceEntity
 import com.example.chicoryaos.ui.purchase.receipt.PurchaseReceiptActivity
 import com.example.chicoryaos.util.extensions.AnimateProgressBar
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -51,10 +52,25 @@ class PurchaseBasketFragment : BottomSheetDialogFragment() {
 
     private fun initDirectBuyBtnClickListener() {
         binding.btnBasketBuy.setOnClickListener {
-            val intent = Intent(context, PurchaseReceiptActivity::class.java)
-            startActivity(intent)
-            dismiss()
+            val priceEntity = createPriceEntity()
+            startPurchaseReceiptActivity(priceEntity)
         }
+    }
+
+    private fun createPriceEntity(): PriceEntity {
+        return PriceEntity(
+            id = 1,
+            name = "상품명",
+            count = viewModel.count.value ?: 0,
+            price = viewModel.totalPrice.value ?: 0,
+        )
+    }
+
+    private fun startPurchaseReceiptActivity(priceEntity: PriceEntity) {
+        val intent = Intent(requireContext(), PurchaseReceiptActivity::class.java)
+        intent.putExtra(TAG, priceEntity)
+        startActivity(intent)
+        dismiss()
     }
 
     override fun onDestroyView() {
