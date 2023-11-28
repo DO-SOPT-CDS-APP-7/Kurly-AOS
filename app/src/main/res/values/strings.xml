@@ -20,5 +20,6 @@
     <string name="receipt_final_price_text">결제예정금액</string>
     <string name="receipt_coupon_text">쿠폰/적립금은 주문서에서 사용 가능합니다</string>
     <string name="receipt_svae_text">최대 236원 적립</string>
+    <string name="receipt_choose_all_text">전체선택(1/1)</string>
 
 </resources>
