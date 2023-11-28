@@ -6,6 +6,19 @@
     <string name="purchase_str_save_description">로그인 후, 적립 혜택 제공</string>
     <string name="purchase_num_zero">0</string>
     <string name="purchase_price_text">%s원 장바구니 담기</string>
+    <string name="receipt_price_text">%s원 주문하기</string>
     <string name="purchase_won_text">%s원</string>
+    <string name="basket_change_text">변경</string>
+    <string name="receipt_text_basket">장바구니</string>
+    <string name="receipt_location_text">서울시 광진구 능동로 120 건국대학교</string>
+    <string name="receipt_star_delivery">샛별배송</string>
+    <string name="receipt_choose_delete">선택 삭제</string>
+    <string name="receipt_frozen_text">냉동상품</string>
+    <string name="receipt_price_item_text">상품금액</string>
+    <string name="receipt_sale_text">상품할인금액</string>
+    <string name="receipt_delivery_text">배송비</string>
+    <string name="receipt_final_price_text">결제예정금액</string>
+    <string name="receipt_coupon_text">쿠폰/적립금은 주문서에서 사용 가능합니다</string>
+    <string name="receipt_svae_text">최대 236원 적립</string>
 
 </resources>
