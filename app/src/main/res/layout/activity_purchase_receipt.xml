@@ -8,19 +8,19 @@
         <import type="android.view.View" />
 
         <variable
-            name="viewModel"
-            type="com.example.chicoryaos.ui.purchase.PurchaseViewModel" />
+            name="vm"
+            type="com.example.chicoryaos.ui.purchase.receipt.PurchaseReceiptViewModel" />
     </data>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/gl_receipt_start_25"
@@ -131,7 +131,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="전체선택(1/1)"
+                android:text="@string/receipt_choose_all_text"
                 android:textColor="@color/ku_gray6"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
@@ -142,7 +142,11 @@
                 style="@style/AndroidTitleRegular14"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
                 android:letterSpacing="-0.045"
+                android:padding="10dp"
                 android:text="@string/receipt_choose_delete"
                 android:textColor="@color/ku_gray6"
                 app:layout_constraintBottom_toBottomOf="@id/tv_receipt_choose_all"
@@ -185,7 +189,6 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/selector_checkbox_purple"
                 android:button="@android:color/transparent"
-                android:checked="true"
                 app:layout_constraintDimensionRatio="1"
                 app:layout_constraintStart_toStartOf="@id/gl_receipt_start_25"
                 app:layout_constraintTop_toBottomOf="@id/tv_receipt_frozen" />
@@ -217,7 +220,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
-                android:text="4,720원"
+                android:text="@{@string/purchase_won_text(vm.calculatePrice)}"
                 android:textColor="@color/ku_gray6"
                 app:layout_constraintStart_toEndOf="@id/iv_receipt_item"
                 app:layout_constraintTop_toTopOf="@id/iv_receipt_item" />
@@ -228,7 +231,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="11dp"
-                android:text="@{@string/purchase_won_text(viewModel.calculatePrice)}"
+                android:text="@{@string/purchase_won_text(vm.calculatePrice)}"
                 android:textColor="@color/ku_gray5"
                 app:layout_constraintBottom_toBottomOf="@id/tv_receipt_item_price"
                 app:layout_constraintStart_toEndOf="@id/tv_receipt_item_price"
@@ -265,7 +268,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="?android:attr/selectableItemBackground"
-                        android:onClick="@{()->viewModel.countDecrease()}"
+                        android:onClick="@{()->vm.countDecrease()}"
                         android:paddingVertical="6dp"
                         android:paddingStart="6dp"
                         android:paddingEnd="5dp"
@@ -280,7 +283,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="@{viewModel.count.toString()}"
+                        android:text="@{vm.count.toString()}"
                         android:textColor="@color/ku_gray6"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -293,7 +296,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="?android:attr/selectableItemBackground"
-                        android:onClick="@{()->viewModel.countIncrease()}"
+                        android:onClick="@{()->vm.countIncrease()}"
                         android:paddingVertical="6dp"
                         android:paddingStart="5dp"
                         android:paddingEnd="6dp"
@@ -380,7 +383,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:letterSpacing="-0.045"
-                android:text="5,900원"
+                android:text="@{@string/purchase_won_text(0)}"
                 android:textColor="@color/ku_gray6"
                 app:layout_constraintBottom_toBottomOf="@id/tv_receipt_delivery_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_50"
@@ -414,8 +417,9 @@
                 style="@style/AndroidHeading3Semibold18"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:gravity="end"
                 android:letterSpacing="-0.045"
-                android:text="5,900원"
+                android:text="@{@string/purchase_won_text(vm.calculatePrice)}"
                 android:textColor="@color/ku_gray6"
                 app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_50"
                 app:layout_constraintTop_toTopOf="@id/tv_receipt_final_price_text" />
@@ -438,8 +442,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="25dp"
                 android:backgroundTint="@color/ku_gray1"
                 android:elevation="0dp"
                 android:paddingVertical="14dp"
@@ -458,17 +461,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="25dp"
                 android:backgroundTint="@color/ku_purple"
                 android:paddingVertical="14dp"
-                android:text="@{@string/receipt_price_text(viewModel.calculatePrice)}"
+                android:text="@{@string/receipt_price_text(vm.calculatePrice)}"
                 android:textColor="@color/ku_white"
                 app:cornerRadius="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_receipt_save"
                 app:rippleColor="@color/ku_purple3"
-                tools:text="구매하기" />
+                tools:text="주문하기" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
