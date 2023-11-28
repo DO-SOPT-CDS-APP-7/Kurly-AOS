@@ -106,9 +106,9 @@
 
                 <ImageView
                     android:id="@+id/iv_detail_item_image"
+                    setImage="@{vm.produce.imageURL}"
                     android:layout_width="match_parent"
-                    android:layout_height="405dp"
-                    android:src="@color/ku_purple"
+                    android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -120,6 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="12dp"
+                    android:text="@{vm.produce.deliveryType}"
                     android:textColor="@color/ku_gray4"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/iv_detail_item_image"
@@ -131,6 +132,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
+                    android:text="@{vm.produce.productName}"
                     app:layout_constraintStart_toStartOf="@id/tv_detail_delivery_type"
                     app:layout_constraintTop_toBottomOf="@id/tv_detail_delivery_type"
                     tools:text="[전주 베테랑] 칼국수" />
@@ -141,10 +143,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
+                    android:text="@string/detail_item_detail_subtitle"
                     android:textColor="@color/ku_gray4"
                     app:layout_constraintStart_toStartOf="@id/tv_detail_delivery_type"
-                    app:layout_constraintTop_toBottomOf="@id/tv_detail_item_name"
-                    tools:text="배테랑의 대표메뉴를 집에서" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_detail_item_name" />
 
                 <TextView
                     android:id="@+id/tv_detail_item_discount_rate"
@@ -173,6 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
+                    android:text="@{vm.produce.discountedPrice}"
                     app:layout_constraintStart_toEndOf="@id/tv_detail_item_discount_oper"
                     app:layout_constraintTop_toTopOf="@id/tv_detail_item_discount_rate"
                     tools:text="4,720원" />
@@ -183,6 +186,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
+                    android:text="@{String.valueOf(vm.produce.originalPrice)}"
                     android:textColor="@color/ku_gray4"
                     app:layout_constraintStart_toStartOf="@id/tv_detail_delivery_type"
                     app:layout_constraintTop_toBottomOf="@id/tv_detail_item_discount_rate"
