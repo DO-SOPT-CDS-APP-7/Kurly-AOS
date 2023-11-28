@@ -10,6 +10,7 @@ class PurchaseViewModel : ViewModel() {
     var price = 0
 
     val calculatePrice = MutableLiveData<String>()
+    val totalPrice = MutableLiveData<Int>()
 
     private val _purchaseProgress = MutableLiveData<Int>()
     val purchaseProgress: LiveData<Int>
@@ -36,10 +37,10 @@ class PurchaseViewModel : ViewModel() {
 
     private fun updateTotalPrice() {
         val totalCount = count.value ?: 0
-        val totalPrice = totalCount * price
-        val formatTotalPrice = PriceFormatter.formatPrice(totalPrice)
+        totalPrice.value = totalCount * price
+        val formatTotalPrice = PriceFormatter.formatPrice(totalPrice.value ?: 0)
         calculatePrice.postValue(formatTotalPrice)
-        setPurchaseProgress(totalPrice)
+        setPurchaseProgress(totalPrice.value ?: 0)
     }
 
     fun setPurchasePrice(newPrice: Int) {
