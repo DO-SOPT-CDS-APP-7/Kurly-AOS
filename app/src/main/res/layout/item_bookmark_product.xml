@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="98dp"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="10dp"
+    android:layout_marginEnd="11dp"
     android:layout_marginBottom="8dp">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/item_wish_list_ment"
+        android:textColor="@color/ku_gray4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_item_wish_list_keep" />
 
@@ -44,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/item_wish_list_title"
+        android:textColor="@color/ku_gray6"
         android:maxLines="2"
         android:ellipsize="end"
         android:breakStrategy="simple"
@@ -59,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/item_sale_price"
-        android:textColor="@color/ku_gray6"
+        android:textColor="@color/ku_gray7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_item_wish_list_title" />
 

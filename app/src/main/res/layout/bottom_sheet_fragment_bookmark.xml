@@ -8,10 +8,9 @@
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
-    style="@style/Widget.Material3.BottomSheet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    android:background="@drawable/bg_top_corner">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/mcv_wish_list_drag_handle"
@@ -40,7 +39,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_wish_list_other_consumer_item"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:nestedScrollingEnabled="false"
