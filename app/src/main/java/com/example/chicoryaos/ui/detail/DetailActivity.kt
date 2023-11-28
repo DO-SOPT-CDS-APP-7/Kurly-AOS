@@ -23,11 +23,13 @@ class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_
             isBookmarked = !isBookmarked
 
             if (isBookmarked) {
+                binding.ivDetailBookmark.setImageResource(R.drawable.ic_button_pressed_full)
                 CustomBookmarkSnackbar.showBookmarkAddSnackbar(
                     findViewById(android.R.id.content),
                     this,
                 )
             } else {
+                binding.ivDetailBookmark.setImageResource(R.drawable.ic_button_pressed)
                 CustomBookmarkSnackbar.showBookmarkDeleteSnackbar(
                     findViewById(android.R.id.content),
                     this,
