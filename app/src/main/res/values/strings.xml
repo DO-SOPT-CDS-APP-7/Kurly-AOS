@@ -13,6 +13,6 @@
     <string name="wish_list_puchase_with_title">함께 구매하면 좋은 상품</string>
     <string name="item_wish_list_ment">샛별배송</string>
     <string name="item_wish_list_title">[시골보쌈과 감자옹심이] 감자는 역시 강원도, 감자먹으러 오세요</string>
-    <string name="item_sale_price">10,500원</string>
+    <string name="item_sale_price">%s원</string>
     <string name="wish_list_btn_detail_relative">연관상품 더보기</string>
 </resources>

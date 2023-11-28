@@ -2,6 +2,7 @@ package com.example.chicoryaos.ui.bookmark
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chicoryaos.databinding.ItemBookmarkProductBinding
+import com.example.chicoryaos.util.extensions.PriceFormatter
 
 class BookmarkViewHolder(private val binding: ItemBookmarkProductBinding) :
     RecyclerView.ViewHolder(binding.root) {
@@ -9,6 +10,6 @@ class BookmarkViewHolder(private val binding: ItemBookmarkProductBinding) :
     fun onBind(bookmarkData: Bookmark) {
         binding.ivItemWishList.setImageResource(bookmarkData.productImage)
         binding.tvItemWishListTitle.text = bookmarkData.productTitle
-        binding.tvItemSalePrice.text = bookmarkData.productPrice.toString()
+        binding.tvItemSalePrice.text = PriceFormatter.formatPrice(bookmarkData.productPrice) + "원"
     }
 }
