@@ -6,11 +6,12 @@ import androidx.lifecycle.ViewModel
 import com.example.chicoryaos.util.extensions.PriceFormatter
 
 class PurchaseViewModel : ViewModel() {
-    val count = MutableLiveData<Int>(1)
+    private val _count = MutableLiveData(1)
+    val count: LiveData<Int>
+        get() = _count
     var price = 0
 
     val calculatePrice = MutableLiveData<String>()
-    val totalPrice = MutableLiveData<Int>()
 
     private val _purchaseProgress = MutableLiveData<Int>()
     val purchaseProgress: LiveData<Int>
@@ -25,23 +26,23 @@ class PurchaseViewModel : ViewModel() {
     }
 
     fun countIncrease() {
-        count.value = count.value?.plus(1)
+        _count.value = _count.value?.plus(1)
         updateTotalPrice()
     }
 
     fun countDecrease() {
-        if (count.value!! > 1) {
-            count.value = count.value?.minus(1)
+        if (_count.value!! > 1) {
+            _count.value = _count.value?.minus(1)
         }
         updateTotalPrice()
     }
 
     private fun updateTotalPrice() {
-        val totalCount = count.value ?: 0
-        totalPrice.value = totalCount * price
-        val formatTotalPrice = PriceFormatter.formatPrice(totalPrice.value ?: 0)
+        val totalCount = _count.value ?: 0
+        val totalPrice = totalCount * price
+        val formatTotalPrice = PriceFormatter.formatPrice(totalPrice)
         calculatePrice.postValue(formatTotalPrice)
-        setPurchaseProgress(totalPrice.value ?: 0)
+        setPurchaseProgress(totalPrice)
     }
 
     fun setPurchasePrice(newPrice: Int) {

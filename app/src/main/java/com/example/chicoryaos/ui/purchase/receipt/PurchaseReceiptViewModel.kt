@@ -5,13 +5,12 @@ import androidx.lifecycle.ViewModel
 import com.example.chicoryaos.util.extensions.PriceFormatter
 
 class PurchaseReceiptViewModel : ViewModel() {
-    val count = MutableLiveData<Int>()
-    private var price = 0
+    val count = MutableLiveData<Int>(1)
+    private var originPrice = 0
 
     val calculatePrice = MutableLiveData<String>()
 
     init {
-        count.value = 1
         updateTotalPrice()
     }
 
@@ -29,13 +28,13 @@ class PurchaseReceiptViewModel : ViewModel() {
 
     private fun updateTotalPrice() {
         val totalCount = count.value ?: 0
-        val totalPrice = totalCount * price
+        val totalPrice = totalCount * originPrice
         val formatTotalPrice = PriceFormatter.formatPrice(totalPrice)
         calculatePrice.postValue(formatTotalPrice)
     }
 
     fun setPurchasePrice(newPrice: Int) {
-        price = newPrice
+        originPrice = newPrice
         updateTotalPrice()
     }
 }

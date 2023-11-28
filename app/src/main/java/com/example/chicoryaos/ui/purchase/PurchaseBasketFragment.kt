@@ -62,7 +62,7 @@ class PurchaseBasketFragment : BottomSheetDialogFragment() {
             id = 1,
             name = "상품명",
             count = viewModel.count.value ?: 0,
-            price = viewModel.totalPrice.value ?: 0,
+            price = viewModel.price,
         )
     }
 
