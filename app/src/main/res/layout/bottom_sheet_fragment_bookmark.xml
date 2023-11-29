@@ -39,7 +39,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_wish_list_other_consumer_item"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:nestedScrollingEnabled="false"
