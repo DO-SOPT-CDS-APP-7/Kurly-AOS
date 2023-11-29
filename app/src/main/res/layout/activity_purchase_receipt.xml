@@ -120,7 +120,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
-                android:text="@string/receipt_star_delivery"
+                android:text="@{vm.priceEntity.deliveryType}"
                 android:textColor="@color/ku_purple"
                 app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
                 app:layout_constraintTop_toBottomOf="@id/tv_receipt_location" />
@@ -198,7 +198,7 @@
                 style="@style/AndroidTitleRegular14"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="[전주 베테랑]칼국수"
+                android:text="@{vm.priceEntity.productName}"
                 android:textColor="@color/ku_gray6"
                 app:layout_constraintBottom_toBottomOf="@id/cb_receipt_selector"
                 app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
@@ -336,8 +336,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:letterSpacing="-0.045"
-                android:text="5,900원"
                 android:textColor="@color/ku_gray6"
+                app:formattedPrice="@{vm.priceEntity.originalPrice}"
                 app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_50"
                 app:layout_constraintTop_toBottomOf="@id/divider_middle" />
 
@@ -359,8 +359,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:letterSpacing="-0.045"
-                android:text="5,900원"
                 android:textColor="@color/ku_gray6"
+                app:formattedPrice="@{vm.priceEntity.discountedPrice}"
                 app:layout_constraintBottom_toBottomOf="@id/tv_receipt_sale_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_50"
                 app:layout_constraintTop_toTopOf="@id/tv_receipt_sale_text" />
