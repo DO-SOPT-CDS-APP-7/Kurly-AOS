@@ -5,7 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.example.chicoryaos.databinding.BottomSheetFragmentPurchaseBinding
+import com.example.chicoryaos.model.ResponseProductDTO
+import com.example.chicoryaos.ui.detail.DetailViewModel
+import com.example.chicoryaos.util.binding.BindingAdapter.setImage
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class PurchaseFragment : BottomSheetDialogFragment() {
@@ -14,7 +18,8 @@ class PurchaseFragment : BottomSheetDialogFragment() {
     private val binding: BottomSheetFragmentPurchaseBinding
         get() = requireNotNull(_binding)
 
-    private val viewModel: PurchaseViewModel by activityViewModels()
+    private val purchaseViewModel by activityViewModels<PurchaseViewModel>()
+    private val detailViewModel by viewModels<DetailViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,17 +34,35 @@ class PurchaseFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initDataBinding()
-        initSetPurchasePrice()
+        initGetDetailData()
         initBasketBtnClickListener()
     }
 
     private fun initDataBinding() {
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.viewModel = viewModel
+        binding.viewModel = purchaseViewModel
     }
 
-    private fun initSetPurchasePrice() {
-        viewModel.setPurchasePrice(1000)
+    private fun initGetDetailData() {
+        detailViewModel.produce.observe(viewLifecycleOwner) {
+            if (it != null) {
+                updatePurchaseUI(it)
+            } else {
+                setViewModelPurchasePrice(0)
+            }
+        }
+    }
+
+    private fun updatePurchaseUI(it: ResponseProductDTO.Product) {
+        val discountedAmount = it.originalPrice * (it.discountRate.toDouble() / 100)
+        val regularPrice = it.originalPrice - discountedAmount.toInt()
+        setViewModelPurchasePrice(regularPrice)
+        binding.ivPurchaseItem.setImage(it.imageURL)
+        binding.tvImgTitle.text = it.productName
+    }
+
+    private fun setViewModelPurchasePrice(price: Int) {
+        purchaseViewModel.setPurchasePrice(price)
     }
 
     private fun initBasketBtnClickListener() {
