@@ -59,6 +59,7 @@ class PurchaseFragment : BottomSheetDialogFragment() {
         setViewModelPurchasePrice(regularPrice)
         binding.ivPurchaseItem.setImage(it.imageURL)
         binding.tvImgTitle.text = it.productName
+        binding.tvMiddleTitle.text = it.productName
     }
 
     private fun setViewModelPurchasePrice(price: Int) {
