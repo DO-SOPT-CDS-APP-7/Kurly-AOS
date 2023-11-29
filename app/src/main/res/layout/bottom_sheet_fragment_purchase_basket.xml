@@ -38,6 +38,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:background="@color/ku_gray3"
+            android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mcv_purchase_drag_handle"
@@ -50,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:letterSpacing="-0.045"
-            android:text="장바구니에 상품을 담았습니다."
+            android:text="@string/basekt_save_product_text"
             android:textColor="@color/ku_gray6"
             app:layout_constraintBottom_toBottomOf="@id/iv_basket_img"
             app:layout_constraintStart_toEndOf="@id/iv_basket_img"
@@ -66,7 +67,7 @@
             android:insetTop="0dp"
             android:insetRight="0dp"
             android:insetBottom="0dp"
-            android:text="바로 구매"
+            android:text="@string/basket_direct_buy_str"
             android:textColor="@color/white"
             app:cornerRadius="4dp"
             app:layout_constraintBottom_toBottomOf="@id/tv_basket_img_title"
@@ -92,7 +93,7 @@
             style="@style/AndroidCaptionSmallRegular10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="더 담으면 무료배송"
+            android:text="@string/basket_more_free_text"
             android:textColor="@color/ku_gray6"
             app:layout_constraintBottom_toBottomOf="@id/tv_basket_price_free"
             app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="21dp"
             android:layout_marginBottom="20dp"
-            android:text="다른 고객이 함께 본 상품"
+            android:text="@string/basket_other_see_text"
             android:textColor="@color/ku_gray6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pg_basket"
@@ -129,12 +130,14 @@
             android:layout_height="0dp"
             android:layout_marginTop="12dp"
             android:background="@color/ku_gray3"
+            android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1:1.26"
             app:layout_constraintEnd_toStartOf="@id/iv_basket_product_2"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_basket_str_other"
+            app:setCoilImage="@{vm.product[0].imageURL}"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerRadius4" />
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -144,11 +147,13 @@
             android:layout_marginHorizontal="12dp"
             android:layout_marginTop="12dp"
             android:background="@color/ku_gray3"
+            android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1:1.26"
             app:layout_constraintEnd_toStartOf="@id/iv_basket_product_3"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@id/iv_basket_product_1"
             app:layout_constraintTop_toBottomOf="@id/tv_basket_str_other"
+            app:setCoilImage="@{vm.product[1].imageURL}"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerRadius4" />
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -157,11 +162,13 @@
             android:layout_height="0dp"
             android:layout_marginTop="12dp"
             android:background="@color/ku_gray3"
+            android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1:1.26"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@id/iv_basket_product_2"
             app:layout_constraintTop_toBottomOf="@id/tv_basket_str_other"
+            app:setCoilImage="@{vm.product[2].imageURL}"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerRadius4" />
 
         <com.google.android.material.button.MaterialButton
@@ -172,7 +179,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/pretendard_regular"
             android:gravity="center"
-            android:text="담기"
+            android:text="@string/basket_save_text"
             android:textColor="@color/ku_gray6"
             android:textSize="12sp"
             app:cornerRadius="4dp"
@@ -194,7 +201,7 @@
             android:fontFamily="@font/pretendard_regular"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:gravity="center"
-            android:text="담기"
+            android:text="@string/basket_save_text"
             android:textColor="@color/ku_gray6"
             android:textSize="12sp"
             app:cornerRadius="4dp"
@@ -215,7 +222,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/pretendard_regular"
             android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:text="담기"
+            android:text="@string/basket_save_text"
             android:textColor="@color/ku_gray6"
             android:textSize="12sp"
             app:cornerRadius="4dp"
@@ -235,7 +242,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="샛별배송"
+            android:text="@{vm.product[0].deliveryType}"
             android:textColor="@color/ku_gray4"
             app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_1"
             app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_1" />
@@ -246,7 +253,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="샛별배송"
+            android:text="@{vm.product[1].deliveryType}"
             android:textColor="@color/ku_gray4"
             app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_2"
             app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_2" />
@@ -257,7 +264,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="샛별배송"
+            android:text="@{vm.product[2].deliveryType}"
             android:textColor="@color/ku_gray4"
             app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_3"
             app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_3" />
@@ -270,7 +277,7 @@
             android:layout_marginTop="5dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="[시골보쌈과 감자옹심이]감자.ss"
+            android:text="@{vm.product[0].productName}"
             android:textColor="@color/ku_gray6"
             app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_1"
             app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_1"
@@ -284,7 +291,7 @@
             android:layout_marginTop="5dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="[시골보쌈과 감자옹심이]감자aaaaaaaaaaaaaaaaaadsfs.."
+            android:text="@{vm.product[1].productName}"
             android:textColor="@color/ku_gray6"
             app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_2"
             app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_2"
@@ -298,7 +305,7 @@
             android:layout_marginTop="5dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="[시골보쌈과 감자옹심이]감자.sssssssssssaaaaaaaaaaaaaaaaaaaaaaaaaaadsfs.."
+            android:text="@{vm.product[2].productName}"
             android:textColor="@color/ku_gray6"
             app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_3"
             app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_3"
@@ -310,11 +317,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="10,500원"
             android:textColor="@color/ku_gray6"
+            app:formattedPrice="@{vm.product[0].originalPrice}"
             app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_1"
             app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_1"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_1" />
+            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_1"
+            tools:text="10,500원" />
 
         <TextView
             android:id="@+id/tv_basket_product_price_2"
@@ -322,11 +330,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="10,500원"
             android:textColor="@color/ku_gray6"
+            app:formattedPrice="@{vm.product[1].originalPrice}"
             app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_2"
             app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_2"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_2" />
+            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_2"
+            tools:text="10,500원" />
 
         <TextView
             android:id="@+id/tv_basket_product_price_3"
@@ -334,11 +343,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="10,500원"
             android:textColor="@color/ku_gray6"
+            app:formattedPrice="@{vm.product[2].originalPrice}"
             app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_3"
             app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_3"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_3" />
+            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_3"
+            tools:text="10,500원" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
