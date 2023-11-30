@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.chicoryaos.databinding.BottomSheetFragmentBookmarkBasketBinding
 import com.example.chicoryaos.ui.bookmark.BookmarkViewModel
+import com.example.chicoryaos.util.CustomBookmarkSnackbar
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BookmarkFragment : BottomSheetDialogFragment() {
@@ -28,6 +29,7 @@ class BookmarkFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initDataBinding()
+        CustomBookmarkSnackbar.showBookmarkAddSnackbar(binding.root, requireContext())
     }
 
     private fun initDataBinding() {
