@@ -65,4 +65,9 @@
     <string name="item_wish_list_title">[시골보쌈과 감자옹심이] 감자는 역시 강원도, 감자먹으러 오세요</string>
     <string name="item_sale_price">%s원</string>
     <string name="wish_list_btn_detail_relative">연관상품 더보기</string>
+
+    <!-- bookmark toast -->
+    <string name="snackbar_bookmark_plus_ment">찜한 상품에 추가했어요</string>
+    <string name="snackbar_bookmark_go_ment">바로가기</string>
+    <string name="snackbar_bookmark_delete_ment">찜한 상품에서 삭제했어요</string>
 </resources>
