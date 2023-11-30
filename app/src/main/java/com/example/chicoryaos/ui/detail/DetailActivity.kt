@@ -42,13 +42,12 @@ class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_
 
     private fun initBookmarkBtnClickListener() {
         binding.ivDetailBookmark.setOnClickListener {
-            val BookmarkBottomSheet = BookmarkFragment()
-            BookmarkBottomSheet.show(supportFragmentManager, BookmarkFragment.TAG)
-
             isBookmarked = !isBookmarked
+            val BookmarkBottomSheet = BookmarkFragment()
 
             if (isBookmarked) {
                 binding.ivDetailBookmark.setImageResource(R.drawable.ic_button_pressed_full)
+                BookmarkBottomSheet.show(supportFragmentManager, BookmarkFragment.TAG)
                 CustomBookmarkSnackbar.showBookmarkAddSnackbar(binding.root, this)
             } else {
                 binding.ivDetailBookmark.setImageResource(R.drawable.ic_button_pressed)
