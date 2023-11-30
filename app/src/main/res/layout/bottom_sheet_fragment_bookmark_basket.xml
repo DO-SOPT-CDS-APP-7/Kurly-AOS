@@ -12,512 +12,524 @@
             type="com.example.chicoryaos.ui.bookmark.BookmarkViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cl_bookmark_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_top_corner">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/mcv_wish_list_drag_handle"
-            android:layout_width="30dp"
-            android:layout_height="5dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/ku_light_gray_drag_handler"
-            android:visibility="visible"
-            app:cardCornerRadius="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:strokeWidth="0dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_top_corner">
 
-        <TextView
-            android:id="@+id/tv_wish_list_other_consumer_title"
-            style="@style/AndroidHeading3Semibold18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="39dp"
-            android:text="@string/wish_list_other_consumer_title"
-            android:textColor="@color/ku_gray6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_wish_list_drag_handle"
+                android:layout_width="30dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/ku_light_gray_drag_handler"
+                android:visibility="visible"
+                app:cardCornerRadius="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="0dp" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_basket_product_1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="12dp"
-            android:background="@color/ku_gray3"
-            app:layout_constraintDimensionRatio="1:1.26"
-            app:layout_constraintEnd_toStartOf="@id/iv_basket_product_2"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_wish_list_other_consumer_title"
-            app:setCoilImage="@{vm.relatedProduct[0].imageURL}"
-            app:shapeAppearanceOverlay="@style/Radius10" />
+            <TextView
+                android:id="@+id/tv_wish_list_other_consumer_title"
+                style="@style/AndroidHeading3Semibold18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="39dp"
+                android:text="@string/wish_list_other_consumer_title"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_basket_product_2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="12dp"
-            android:background="@color/ku_gray3"
-            app:layout_constraintDimensionRatio="1:1.26"
-            app:layout_constraintEnd_toStartOf="@id/iv_basket_product_3"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/iv_basket_product_1"
-            app:layout_constraintTop_toBottomOf="@id/tv_wish_list_other_consumer_title"
-            app:setCoilImage="@{vm.relatedProduct[1].imageURL}"
-            app:shapeAppearanceOverlay="@style/Radius10" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_basket_product_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/ku_gray3"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1.26"
+                app:layout_constraintEnd_toStartOf="@id/iv_basket_product_2"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_wish_list_other_consumer_title"
+                app:setCoilImage="@{vm.relatedProduct[0].imageURL}"
+                app:shapeAppearanceOverlay="@style/Radius10" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_basket_product_3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="25dp"
-            android:background="@color/ku_gray3"
-            app:layout_constraintDimensionRatio="1:1.26"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/iv_basket_product_2"
-            app:layout_constraintTop_toBottomOf="@id/tv_wish_list_other_consumer_title"
-            app:setCoilImage="@{vm.relatedProduct[2].imageURL}"
-            app:shapeAppearanceOverlay="@style/Radius10" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_basket_product_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/ku_gray3"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1.26"
+                app:layout_constraintEnd_toStartOf="@id/iv_basket_product_3"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/iv_basket_product_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_wish_list_other_consumer_title"
+                app:setCoilImage="@{vm.relatedProduct[1].imageURL}"
+                app:shapeAppearanceOverlay="@style/Radius10" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_basket_get_product_1"
-            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:gravity="center"
-            android:text="담기"
-            android:textColor="@color/ku_gray6"
-            android:textSize="12sp"
-            app:cornerRadius="4dp"
-            app:iconGravity="textStart"
-            app:iconTint="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@id/iv_basket_product_1"
-            app:layout_constraintStart_toStartOf="@id/iv_basket_product_1"
-            app:layout_constraintTop_toBottomOf="@id/iv_basket_product_1"
-            app:rippleColor="@color/ku_gray3"
-            app:strokeColor="@color/ku_gray3" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_basket_product_3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="25dp"
+                android:background="@color/ku_gray3"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1.26"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/iv_basket_product_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_wish_list_other_consumer_title"
+                app:setCoilImage="@{vm.relatedProduct[2].imageURL}"
+                app:shapeAppearanceOverlay="@style/Radius10" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_basket_get_product_2"
-            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:gravity="center"
-            android:text="담기"
-            android:textColor="@color/ku_gray6"
-            android:textSize="12sp"
-            app:cornerRadius="4dp"
-            app:iconGravity="textStart"
-            app:iconTint="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@+id/iv_basket_product_2"
-            app:layout_constraintStart_toStartOf="@id/iv_basket_product_2"
-            app:layout_constraintTop_toBottomOf="@id/iv_basket_product_2"
-            app:rippleColor="@color/ku_gray3"
-            app:strokeColor="@color/ku_gray3" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_basket_get_product_1"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:gravity="center"
+                android:text="담기"
+                android:textColor="@color/ku_gray6"
+                android:textSize="12sp"
+                app:cornerRadius="4dp"
+                app:iconGravity="textStart"
+                app:iconTint="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/iv_basket_product_1"
+                app:layout_constraintStart_toStartOf="@id/iv_basket_product_1"
+                app:layout_constraintTop_toBottomOf="@id/iv_basket_product_1"
+                app:rippleColor="@color/ku_gray3"
+                app:strokeColor="@color/ku_gray3" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_basket_get_product_3"
-            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:text="담기"
-            android:textColor="@color/ku_gray6"
-            android:textSize="12sp"
-            app:cornerRadius="4dp"
-            app:iconGravity="textStart"
-            app:iconTint="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@+id/iv_basket_product_3"
-            app:layout_constraintStart_toStartOf="@id/iv_basket_product_3"
-            app:layout_constraintTop_toBottomOf="@id/iv_basket_product_3"
-            app:rippleColor="@color/ku_gray3"
-            app:strokeColor="@color/ku_gray3" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_basket_get_product_2"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:text="담기"
+                android:textColor="@color/ku_gray6"
+                android:textSize="12sp"
+                app:cornerRadius="4dp"
+                app:iconGravity="textStart"
+                app:iconTint="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@+id/iv_basket_product_2"
+                app:layout_constraintStart_toStartOf="@id/iv_basket_product_2"
+                app:layout_constraintTop_toBottomOf="@id/iv_basket_product_2"
+                app:rippleColor="@color/ku_gray3"
+                app:strokeColor="@color/ku_gray3" />
 
-
-        <TextView
-            android:id="@+id/tv_basket_str_product_1"
-            style="@style/AndroidCaptionSmallRegular10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{vm.relatedProduct[0].deliveryType}"
-            android:textColor="@color/ku_gray4"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_1"
-            app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_1" />
-
-        <TextView
-            android:id="@+id/tv_basket_str_product_2"
-            style="@style/AndroidCaptionSmallRegular10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{vm.relatedProduct[1].deliveryType}"
-            android:textColor="@color/ku_gray4"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_2"
-            app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_2" />
-
-        <TextView
-            android:id="@+id/tv_basket_str_product_3"
-            style="@style/AndroidCaptionSmallRegular10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{vm.relatedProduct[2].deliveryType}"
-            android:textColor="@color/ku_gray4"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_3"
-            app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_3" />
-
-        <TextView
-            android:id="@+id/tv_basket_product_title_1"
-            style="@style/AndroidCaptionRegular12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="@{vm.relatedProduct[0].productName}"
-            android:textColor="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_1"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_1"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_1" />
-
-        <TextView
-            android:id="@+id/tv_basket_product_title_2"
-            style="@style/AndroidCaptionRegular12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="@{vm.relatedProduct[1].productName}"
-            android:textColor="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_2"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_2"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_2" />
-
-        <TextView
-            android:id="@+id/tv_basket_product_title_3"
-            style="@style/AndroidCaptionRegular12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="@{vm.relatedProduct[2].productName}"
-            android:textColor="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_3"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_3"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_3" />
-
-        <TextView
-            android:id="@+id/tv_basket_product_price_1"
-            style="@style/AndroidCaptionSemibold12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/ku_gray6"
-            app:formattedPrice="@{vm.relatedProduct[0].originalPrice}"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_1"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_1"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_1" />
-
-        <TextView
-            android:id="@+id/tv_basket_product_price_2"
-            style="@style/AndroidCaptionSemibold12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/ku_gray6"
-            app:formattedPrice="@{vm.relatedProduct[1].originalPrice}"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_2"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_2"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_2" />
-
-        <TextView
-            android:id="@+id/tv_basket_product_price_3"
-            style="@style/AndroidCaptionSemibold12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/ku_gray6"
-            app:formattedPrice="@{vm.relatedProduct[2].originalPrice}"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_3"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_3"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_3" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/md_wish_list_divider"
-            android:layout_width="wrap_content"
-            android:layout_height="11dp"
-            android:layout_marginTop="14dp"
-            app:dividerColor="@color/ku_gray2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_price_3" />
-
-        <TextView
-            android:id="@+id/tv_wish_list_puchase_with_title"
-            style="@style/AndroidHeading3Semibold18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            android:text="@string/wish_list_puchase_with_title"
-            android:textColor="@color/ku_gray6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/md_wish_list_divider" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_basket_product_11"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="12dp"
-            android:background="@color/ku_gray3"
-            app:layout_constraintDimensionRatio="1:1.26"
-            app:layout_constraintEnd_toStartOf="@id/iv_basket_product_22"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_wish_list_puchase_with_title"
-            app:setCoilImage="@{vm.recommendProduct[0].imageURL}"
-            app:shapeAppearanceOverlay="@style/Radius10" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_basket_get_product_3"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:text="담기"
+                android:textColor="@color/ku_gray6"
+                android:textSize="12sp"
+                app:cornerRadius="4dp"
+                app:iconGravity="textStart"
+                app:iconTint="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@+id/iv_basket_product_3"
+                app:layout_constraintStart_toStartOf="@id/iv_basket_product_3"
+                app:layout_constraintTop_toBottomOf="@id/iv_basket_product_3"
+                app:rippleColor="@color/ku_gray3"
+                app:strokeColor="@color/ku_gray3" />
 
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_basket_product_22"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="12dp"
-            android:background="@color/ku_gray3"
-            app:layout_constraintDimensionRatio="1:1.26"
-            app:layout_constraintEnd_toStartOf="@id/iv_basket_product_33"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/iv_basket_product_11"
-            app:layout_constraintTop_toBottomOf="@id/tv_wish_list_puchase_with_title"
-            app:setCoilImage="@{vm.recommendProduct[1].imageURL}"
-            app:shapeAppearanceOverlay="@style/Radius10" />
+            <TextView
+                android:id="@+id/tv_basket_str_product_1"
+                style="@style/AndroidCaptionSmallRegular10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{vm.relatedProduct[0].deliveryType}"
+                android:textColor="@color/ku_gray4"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_1"
+                app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_1" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_basket_product_33"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="25dp"
-            android:background="@color/ku_gray3"
-            app:layout_constraintDimensionRatio="1:1.26"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/iv_basket_product_22"
-            app:layout_constraintTop_toBottomOf="@id/tv_wish_list_puchase_with_title"
-            app:setCoilImage="@{vm.recommendProduct[2].imageURL}"
-            app:shapeAppearanceOverlay="@style/Radius10" />
+            <TextView
+                android:id="@+id/tv_basket_str_product_2"
+                style="@style/AndroidCaptionSmallRegular10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{vm.relatedProduct[1].deliveryType}"
+                android:textColor="@color/ku_gray4"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_2"
+                app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_2" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_basket_get_product_11"
-            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:gravity="center"
-            android:text="담기"
-            android:textColor="@color/ku_gray6"
-            android:textSize="12sp"
-            app:cornerRadius="4dp"
-            app:iconGravity="textStart"
-            app:iconTint="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@id/iv_basket_product_11"
-            app:layout_constraintStart_toStartOf="@id/iv_basket_product_11"
-            app:layout_constraintTop_toBottomOf="@id/iv_basket_product_11"
-            app:rippleColor="@color/ku_gray3"
-            app:strokeColor="@color/ku_gray3" />
+            <TextView
+                android:id="@+id/tv_basket_str_product_3"
+                style="@style/AndroidCaptionSmallRegular10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{vm.relatedProduct[2].deliveryType}"
+                android:textColor="@color/ku_gray4"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_3"
+                app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_3" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_basket_get_product_22"
-            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:gravity="center"
-            android:text="담기"
-            android:textColor="@color/ku_gray6"
-            android:textSize="12sp"
-            app:cornerRadius="4dp"
-            app:iconGravity="textStart"
-            app:iconTint="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@+id/iv_basket_product_22"
-            app:layout_constraintStart_toStartOf="@id/iv_basket_product_22"
-            app:layout_constraintTop_toBottomOf="@id/iv_basket_product_22"
-            app:rippleColor="@color/ku_gray3"
-            app:strokeColor="@color/ku_gray3" />
+            <TextView
+                android:id="@+id/tv_basket_product_title_1"
+                style="@style/AndroidCaptionRegular12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{vm.relatedProduct[0].productName}"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_1"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_1" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_basket_get_product_33"
-            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:text="담기"
-            android:textColor="@color/ku_gray6"
-            android:textSize="12sp"
-            app:cornerRadius="4dp"
-            app:iconGravity="textStart"
-            app:iconTint="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@+id/iv_basket_product_33"
-            app:layout_constraintStart_toStartOf="@id/iv_basket_product_33"
-            app:layout_constraintTop_toBottomOf="@id/iv_basket_product_33"
-            app:rippleColor="@color/ku_gray3"
-            app:strokeColor="@color/ku_gray3" />
+            <TextView
+                android:id="@+id/tv_basket_product_title_2"
+                style="@style/AndroidCaptionRegular12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{vm.relatedProduct[1].productName}"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_2"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_2" />
+
+            <TextView
+                android:id="@+id/tv_basket_product_title_3"
+                style="@style/AndroidCaptionRegular12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{vm.relatedProduct[2].productName}"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_3"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_3"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_3" />
+
+            <TextView
+                android:id="@+id/tv_basket_product_price_1"
+                style="@style/AndroidCaptionSemibold12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/ku_gray6"
+                app:formattedPrice="@{vm.relatedProduct[0].originalPrice}"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_1"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_1" />
+
+            <TextView
+                android:id="@+id/tv_basket_product_price_2"
+                style="@style/AndroidCaptionSemibold12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/ku_gray6"
+                app:formattedPrice="@{vm.relatedProduct[1].originalPrice}"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_2"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_2" />
+
+            <TextView
+                android:id="@+id/tv_basket_product_price_3"
+                style="@style/AndroidCaptionSemibold12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/ku_gray6"
+                app:formattedPrice="@{vm.relatedProduct[2].originalPrice}"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_3"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_3"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_3" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/md_wish_list_divider"
+                android:layout_width="wrap_content"
+                android:layout_height="11dp"
+                android:layout_marginTop="14dp"
+                app:dividerColor="@color/ku_gray2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_product_price_3" />
+
+            <TextView
+                android:id="@+id/tv_wish_list_puchase_with_title"
+                style="@style/AndroidHeading3Semibold18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/wish_list_puchase_with_title"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/md_wish_list_divider" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_basket_product_11"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/ku_gray3"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1.26"
+                app:layout_constraintEnd_toStartOf="@id/iv_basket_product_22"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_wish_list_puchase_with_title"
+                app:setCoilImage="@{vm.recommendProduct[0].imageURL}"
+                app:shapeAppearanceOverlay="@style/Radius10" />
 
 
-        <TextView
-            android:id="@+id/tv_basket_str_product_11"
-            style="@style/AndroidCaptionSmallRegular10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{vm.recommendProduct[0].deliveryType}"
-            android:textColor="@color/ku_gray4"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_11"
-            app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_11" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_basket_product_22"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/ku_gray3"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1.26"
+                app:layout_constraintEnd_toStartOf="@id/iv_basket_product_33"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/iv_basket_product_11"
+                app:layout_constraintTop_toBottomOf="@id/tv_wish_list_puchase_with_title"
+                app:setCoilImage="@{vm.recommendProduct[1].imageURL}"
+                app:shapeAppearanceOverlay="@style/Radius10" />
 
-        <TextView
-            android:id="@+id/tv_basket_str_product_22"
-            style="@style/AndroidCaptionSmallRegular10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{vm.recommendProduct[0].deliveryType}"
-            android:textColor="@color/ku_gray4"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_22"
-            app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_22" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_basket_product_33"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="25dp"
+                android:background="@color/ku_gray3"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1.26"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/iv_basket_product_22"
+                app:layout_constraintTop_toBottomOf="@id/tv_wish_list_puchase_with_title"
+                app:setCoilImage="@{vm.recommendProduct[2].imageURL}"
+                app:shapeAppearanceOverlay="@style/Radius10" />
 
-        <TextView
-            android:id="@+id/tv_basket_str_product_33"
-            style="@style/AndroidCaptionSmallRegular10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{vm.recommendProduct[0].deliveryType}"
-            android:textColor="@color/ku_gray4"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_33"
-            app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_33" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_basket_get_product_11"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:gravity="center"
+                android:text="담기"
+                android:textColor="@color/ku_gray6"
+                android:textSize="12sp"
+                app:cornerRadius="4dp"
+                app:iconGravity="textStart"
+                app:iconTint="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/iv_basket_product_11"
+                app:layout_constraintStart_toStartOf="@id/iv_basket_product_11"
+                app:layout_constraintTop_toBottomOf="@id/iv_basket_product_11"
+                app:rippleColor="@color/ku_gray3"
+                app:strokeColor="@color/ku_gray3" />
 
-        <TextView
-            android:id="@+id/tv_basket_product_title_11"
-            style="@style/AndroidCaptionRegular12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="@{vm.recommendProduct[0].productName}"
-            android:textColor="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_11"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_11"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_11" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_basket_get_product_22"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:text="담기"
+                android:textColor="@color/ku_gray6"
+                android:textSize="12sp"
+                app:cornerRadius="4dp"
+                app:iconGravity="textStart"
+                app:iconTint="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@+id/iv_basket_product_22"
+                app:layout_constraintStart_toStartOf="@id/iv_basket_product_22"
+                app:layout_constraintTop_toBottomOf="@id/iv_basket_product_22"
+                app:rippleColor="@color/ku_gray3"
+                app:strokeColor="@color/ku_gray3" />
 
-        <TextView
-            android:id="@+id/tv_basket_product_title_22"
-            style="@style/AndroidCaptionRegular12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="@{vm.recommendProduct[1].productName}"
-            android:textColor="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_22"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_22"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_22" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_basket_get_product_33"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:text="담기"
+                android:textColor="@color/ku_gray6"
+                android:textSize="12sp"
+                app:cornerRadius="4dp"
+                app:iconGravity="textStart"
+                app:iconTint="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@+id/iv_basket_product_33"
+                app:layout_constraintStart_toStartOf="@id/iv_basket_product_33"
+                app:layout_constraintTop_toBottomOf="@id/iv_basket_product_33"
+                app:rippleColor="@color/ku_gray3"
+                app:strokeColor="@color/ku_gray3" />
 
-        <TextView
-            android:id="@+id/tv_basket_product_title_33"
-            style="@style/AndroidCaptionRegular12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="@{vm.recommendProduct[2].productName}"
-            android:textColor="@color/ku_gray6"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_33"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_33"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_33" />
 
-        <TextView
-            android:id="@+id/tv_basket_product_price_11"
-            style="@style/AndroidCaptionSemibold12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/ku_gray6"
-            app:formattedPrice="@{vm.recommendProduct[0].originalPrice}"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_11"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_11"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_11" />
+            <TextView
+                android:id="@+id/tv_basket_str_product_11"
+                style="@style/AndroidCaptionSmallRegular10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{vm.recommendProduct[0].deliveryType}"
+                android:textColor="@color/ku_gray4"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_11"
+                app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_11" />
 
-        <TextView
-            android:id="@+id/tv_basket_product_price_22"
-            style="@style/AndroidCaptionSemibold12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/ku_gray6"
-            app:formattedPrice="@{vm.recommendProduct[1].originalPrice}"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_22"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_22"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_22" />
+            <TextView
+                android:id="@+id/tv_basket_str_product_22"
+                style="@style/AndroidCaptionSmallRegular10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{vm.recommendProduct[0].deliveryType}"
+                android:textColor="@color/ku_gray4"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_22"
+                app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_22" />
 
-        <TextView
-            android:id="@+id/tv_basket_product_price_33"
-            style="@style/AndroidCaptionSemibold12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/ku_gray6"
-            app:formattedPrice="@{vm.recommendProduct[2].originalPrice}"
-            app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_33"
-            app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_33"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_33" />
+            <TextView
+                android:id="@+id/tv_basket_str_product_33"
+                style="@style/AndroidCaptionSmallRegular10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{vm.recommendProduct[0].deliveryType}"
+                android:textColor="@color/ku_gray4"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_33"
+                app:layout_constraintTop_toBottomOf="@id/btn_basket_get_product_33" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_wish_list_detail_relative"
-            style="@style/AndroidTitleSemibold14"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="27dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/shape_purple_fill_4_rect"
-            android:text="@string/wish_list_btn_detail_relative"
-            android:textColor="@color/ku_white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_product_price_33" />
+            <TextView
+                android:id="@+id/tv_basket_product_title_11"
+                style="@style/AndroidCaptionRegular12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{vm.recommendProduct[0].productName}"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_11"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_11"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_11" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_basket_product_title_22"
+                style="@style/AndroidCaptionRegular12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{vm.recommendProduct[1].productName}"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_22"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_22"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_22" />
+
+            <TextView
+                android:id="@+id/tv_basket_product_title_33"
+                style="@style/AndroidCaptionRegular12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{vm.recommendProduct[2].productName}"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_33"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_33"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_str_product_33" />
+
+            <TextView
+                android:id="@+id/tv_basket_product_price_11"
+                style="@style/AndroidCaptionSemibold12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/ku_gray6"
+                app:formattedPrice="@{vm.recommendProduct[0].originalPrice}"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_11"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_11"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_11" />
+
+            <TextView
+                android:id="@+id/tv_basket_product_price_22"
+                style="@style/AndroidCaptionSemibold12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/ku_gray6"
+                app:formattedPrice="@{vm.recommendProduct[1].originalPrice}"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_22"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_22"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_22" />
+
+            <TextView
+                android:id="@+id/tv_basket_product_price_33"
+                style="@style/AndroidCaptionSemibold12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/ku_gray6"
+                app:formattedPrice="@{vm.recommendProduct[2].originalPrice}"
+                app:layout_constraintEnd_toEndOf="@id/btn_basket_get_product_33"
+                app:layout_constraintStart_toStartOf="@id/btn_basket_get_product_33"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_product_title_33" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_wish_list_detail_relative"
+                style="@style/AndroidTitleSemibold14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/shape_purple_fill_4_rect"
+                android:text="@string/wish_list_btn_detail_relative"
+                android:textColor="@color/ku_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_basket_product_price_33" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
