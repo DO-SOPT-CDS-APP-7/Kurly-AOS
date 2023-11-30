@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import coil.load
 import com.example.chicoryaos.databinding.BottomSheetFragmentPurchaseBasketBinding
 import com.example.chicoryaos.model.PriceEntity
 import com.example.chicoryaos.model.ResponseProductDTO
@@ -56,12 +55,12 @@ class PurchaseBasketFragment : BottomSheetDialogFragment() {
     private fun initDataBinding() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.vm = purchaseViewModel
+        binding.vmDetail = detailViewModel
     }
 
     private fun initGetDetailData() {
         detailViewModel.produce.observe(viewLifecycleOwner) {
             if (it != null) {
-                binding.ivBasketImg.load(it.imageURL)
                 setProductEntityDetailData(it)
             }
         }

@@ -8,6 +8,11 @@
         <variable
             name="vm"
             type="com.example.chicoryaos.ui.purchase.PurchaseViewModel" />
+
+        <variable
+            name="vmDetail"
+            type="com.example.chicoryaos.ui.detail.DetailViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,6 +39,7 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_basket_img"
+            setCoilImage="@{vmDetail.produce.imageURL}"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
