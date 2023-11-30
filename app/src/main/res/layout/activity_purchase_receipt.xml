@@ -202,10 +202,12 @@
                 android:textColor="@color/ku_gray6"
                 app:layout_constraintBottom_toBottomOf="@id/cb_receipt_selector"
                 app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
-                app:layout_constraintTop_toTopOf="@id/cb_receipt_selector" />
+                app:layout_constraintTop_toTopOf="@id/cb_receipt_selector"
+                tools:text="제목" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_receipt_item"
+                setCoilImage="@{vm.priceEntity.imageUrl}"
                 android:layout_width="54dp"
                 android:layout_height="68dp"
                 android:layout_marginTop="15dp"
@@ -223,7 +225,8 @@
                 android:text="@{@string/purchase_won_text(vm.calculatePrice)}"
                 android:textColor="@color/ku_gray6"
                 app:layout_constraintStart_toEndOf="@id/iv_receipt_item"
-                app:layout_constraintTop_toTopOf="@id/iv_receipt_item" />
+                app:layout_constraintTop_toTopOf="@id/iv_receipt_item"
+                tools:text="5000원" />
 
             <TextView
                 android:id="@+id/tv_receipt_original_price"
