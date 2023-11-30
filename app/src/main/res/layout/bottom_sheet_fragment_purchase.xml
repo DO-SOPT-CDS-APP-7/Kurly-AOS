@@ -8,6 +8,11 @@
         <variable
             name="viewModel"
             type="com.example.chicoryaos.ui.purchase.PurchaseViewModel" />
+
+        <variable
+            name="vmDetail"
+            type="com.example.chicoryaos.ui.detail.DetailViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,6 +37,7 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_purchase_item"
+            setCoilImage="@{vmDetail.produce.imageURL}"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="25dp"
@@ -50,11 +56,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
             android:letterSpacing="-0.045"
-            tools:text="[전주 베테랑] 칼국수"
+            android:text="@{vmDetail.produce.productName}"
             android:textColor="@color/ku_gray6"
             app:layout_constraintBottom_toTopOf="@id/tv_img_sub_title"
             app:layout_constraintStart_toEndOf="@id/iv_purchase_item"
-            app:layout_constraintTop_toTopOf="@id/iv_purchase_item" />
+            app:layout_constraintTop_toTopOf="@id/iv_purchase_item"
+            tools:text="[전주 베테랑] 칼국수" />
 
         <TextView
             android:id="@+id/tv_img_sub_title"
@@ -85,10 +92,11 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="18dp"
             android:letterSpacing="-0.045"
-            tools:text="[전주 베테랑] 칼국수"
+            android:text="@{vmDetail.produce.productName}"
             android:textColor="@color/ku_gray6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_top" />
+            app:layout_constraintTop_toBottomOf="@id/divider_top"
+            tools:text="[전주 베테랑] 칼국수" />
 
         <TextView
             android:id="@+id/tv_sale_price"

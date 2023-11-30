@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import com.example.chicoryaos.databinding.BottomSheetFragmentPurchaseBinding
 import com.example.chicoryaos.model.ResponseProductDTO
 import com.example.chicoryaos.ui.detail.DetailViewModel
-import com.example.chicoryaos.util.binding.BindingAdapter.setImage
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class PurchaseFragment : BottomSheetDialogFragment() {
@@ -41,6 +40,7 @@ class PurchaseFragment : BottomSheetDialogFragment() {
     private fun initDataBinding() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = purchaseViewModel
+        binding.vmDetail = detailViewModel
     }
 
     private fun initGetDetailData() {
@@ -57,9 +57,6 @@ class PurchaseFragment : BottomSheetDialogFragment() {
         val discountedAmount = it.originalPrice * (it.discountRate.toDouble() / 100)
         val regularPrice = it.originalPrice - discountedAmount.toInt()
         setViewModelPurchasePrice(regularPrice)
-        binding.ivPurchaseItem.setImage(it.imageURL)
-        binding.tvImgTitle.text = it.productName
-        binding.tvMiddleTitle.text = it.productName
     }
 
     private fun setViewModelPurchasePrice(price: Int) {
