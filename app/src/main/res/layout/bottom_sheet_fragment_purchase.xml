@@ -25,14 +25,14 @@
             android:backgroundTint="@color/ku_light_gray_drag_handler"
             android:visibility="visible"
             app:cardCornerRadius="18dp"
-            app:layout_constraintBottom_toTopOf="@id/img_purchase_item"
+            app:layout_constraintBottom_toTopOf="@id/iv_purchase_item"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:strokeWidth="0dp" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/img_purchase_item"
+            android:id="@+id/iv_purchase_item"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="25dp"
@@ -53,8 +53,8 @@
             android:text="[전주 베테랑] 칼국수"
             android:textColor="@color/ku_gray6"
             app:layout_constraintBottom_toTopOf="@id/tv_img_sub_title"
-            app:layout_constraintStart_toEndOf="@id/img_purchase_item"
-            app:layout_constraintTop_toTopOf="@id/img_purchase_item" />
+            app:layout_constraintStart_toEndOf="@id/iv_purchase_item"
+            app:layout_constraintTop_toTopOf="@id/iv_purchase_item" />
 
         <TextView
             android:id="@+id/tv_img_sub_title"
@@ -63,8 +63,8 @@
             android:layout_height="wrap_content"
             android:text="베테랑의 대표 메뉴를 집에서"
             android:textColor="@color/ku_gray5"
-            app:layout_constraintBottom_toBottomOf="@id/img_purchase_item"
-            app:layout_constraintStart_toEndOf="@id/img_purchase_item"
+            app:layout_constraintBottom_toBottomOf="@id/iv_purchase_item"
+            app:layout_constraintStart_toEndOf="@id/iv_purchase_item"
             app:layout_constraintStart_toStartOf="@id/tv_img_title"
             app:layout_constraintTop_toBottomOf="@id/tv_img_title" />
 
@@ -75,7 +75,7 @@
             android:layout_marginHorizontal="25dp"
             android:layout_marginTop="30dp"
             app:dividerColor="@color/ku_gray2"
-            app:layout_constraintTop_toBottomOf="@id/img_purchase_item" />
+            app:layout_constraintTop_toBottomOf="@id/iv_purchase_item" />
 
         <TextView
             android:id="@+id/tv_middle_title"
@@ -129,6 +129,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="25dp"
+            android:backgroundTint="@color/ku_white"
             app:cardCornerRadius="4dp"
             app:layout_constraintBottom_toBottomOf="@id/tv_sale_price"
             app:layout_constraintEnd_toEndOf="parent"
@@ -236,7 +237,7 @@
             app:layout_constraintTop_toTopOf="@id/mcv_save_yello" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_detail_purchase"
+            android:id="@+id/btn_purchase_basket"
             style="@style/AndroidTitleSemibold14"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -250,7 +251,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mcv_save_yello"
-            app:layout_constraintVertical_bias="0.497"
+            app:rippleColor="@color/ku_purple3"
             tools:text="구매하기" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
