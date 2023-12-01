@@ -2,6 +2,7 @@ package com.example.chicoryaos.util
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -12,6 +13,8 @@ import com.google.android.material.snackbar.Snackbar
 class CustomBookmarkSnackbar {
 
     companion object {
+
+        private var currentSnackbar: Snackbar? = null
 
         fun showBookmarkAddSnackbar(anchorView: View, context: Context) {
             showSnackbar(
@@ -27,6 +30,10 @@ class CustomBookmarkSnackbar {
                 context,
                 R.layout.snackbar_bookmark_delete,
             )
+        }
+
+        fun dismissSnackbar() {
+            currentSnackbar?.dismiss()
         }
 
         private fun showSnackbar(
@@ -54,6 +61,17 @@ class CustomBookmarkSnackbar {
                 ConstraintLayout.LayoutParams.WRAP_CONTENT,
             )
             snackbarLayout.addView(customSnackbarView, 0, customParams)
+
+            snackbarLayout.setOnTouchListener { _, event ->
+                when (event.action) {
+                    MotionEvent.ACTION_UP -> {
+                        snackbar.dismiss()
+                    }
+                }
+                true
+            }
+
+            currentSnackbar = snackbar
 
             snackbar.show()
         }

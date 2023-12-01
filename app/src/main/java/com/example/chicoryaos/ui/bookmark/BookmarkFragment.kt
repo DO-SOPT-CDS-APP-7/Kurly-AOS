@@ -1,3 +1,4 @@
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +7,8 @@ import androidx.fragment.app.activityViewModels
 import com.example.chicoryaos.databinding.BottomSheetFragmentBookmarkBasketBinding
 import com.example.chicoryaos.ui.bookmark.BookmarkViewModel
 import com.example.chicoryaos.util.CustomBookmarkSnackbar
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BookmarkFragment : BottomSheetDialogFragment() {
@@ -30,6 +33,28 @@ class BookmarkFragment : BottomSheetDialogFragment() {
 
         initDataBinding()
         CustomBookmarkSnackbar.showBookmarkAddSnackbar(binding.root, requireContext())
+    }
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
+
+        dialog.behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                // BottomSheet 상태 변경 감지
+                when (newState) {
+                    BottomSheetBehavior.STATE_DRAGGING -> {
+                        // BottomSheet이 드래그 중인 상태
+                        CustomBookmarkSnackbar.dismissSnackbar()
+                    }
+                }
+            }
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+                // BottomSheet이 슬라이딩 중인 상태
+            }
+        })
+
+        return dialog
     }
 
     private fun initDataBinding() {
