@@ -3,7 +3,7 @@ https://github.com/DO-SOPT-CDS-APP-7/Kurly-AOS/assets/91793891/d5370104-51cc-4d9
 
 # 시연 이미지 📸
 <img src="https://github.com/DO-SOPT-CDS-APP-7/Kurly-AOS/assets/91793891/703e8b7e-0a51-42fe-bad7-bc4c9371912f
-" width="200"/>
+" width="200" height="400"/>
 <img src="https://github.com/DO-SOPT-CDS-APP-7/Kurly-AOS/assets/91793891/2719b32c-fb04-4ca1-b1c6-eb47499385c6
 " width="200"/>
 <img src="https://github.com/DO-SOPT-CDS-APP-7/Kurly-AOS/assets/91793891/7b5f13f4-5f83-486a-bc27-b4154ae27a89
