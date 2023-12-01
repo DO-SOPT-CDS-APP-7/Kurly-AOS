@@ -2,10 +2,10 @@
 
 
 # Contributors 💜
-|View|사진|담당자|
+|View|담당자||
 |------|---|---|
-|Detail|강희|@stellar-halo|
-|Bookmark|호연|@pump9918|
+|Detail|강희 @stellar-halo| ![profile](https://avatars.githubusercontent.com/u/91793891?v=4) |
+|Bookmark|호연 @pump9918| ![profile](https://avatars.githubusercontent.com/u/125239880?v=4) |
 |Purchase|찬우 @chanubc| ![profile](https://avatars.githubusercontent.com/u/106955456?v=4) |
 
 # Code Convention 🎇
