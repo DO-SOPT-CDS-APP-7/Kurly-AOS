@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.example.chicoryaos.databinding.BottomSheetFragmentPurchaseBinding
+import com.example.chicoryaos.databinding.BottomSheetFragmentPurchaseBasketBinding
+import com.example.chicoryaos.util.extensions.AnimateProgressBar
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class PurchaseFragment : BottomSheetDialogFragment() {
+class PurchaseBasketFragment : BottomSheetDialogFragment() {
 
-    private var _binding: BottomSheetFragmentPurchaseBinding? = null
-    private val binding: BottomSheetFragmentPurchaseBinding
+    private var _binding: BottomSheetFragmentPurchaseBasketBinding? = null
+    private val binding: BottomSheetFragmentPurchaseBasketBinding
         get() = requireNotNull(_binding)
 
     private val viewModel: PurchaseViewModel by activityViewModels()
@@ -21,7 +22,7 @@ class PurchaseFragment : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        _binding = BottomSheetFragmentPurchaseBinding.inflate(inflater, container, false)
+        _binding = BottomSheetFragmentPurchaseBasketBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -29,29 +30,20 @@ class PurchaseFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initDataBinding()
-        initSetPurchasePrice()
-        initBasketBtnClickListener()
+        initProgressAnimation()
     }
 
     private fun initDataBinding() {
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.viewModel = viewModel
+        binding.vm = viewModel
     }
 
-    private fun initSetPurchasePrice() {
-        viewModel.setPurchasePrice(1000)
-    }
-
-    private fun initBasketBtnClickListener() {
-        binding.btnPurchaseBasket.setOnClickListener {
-            dismiss()
-            showBasketBottomSheet()
-        }
-    }
-
-    private fun showBasketBottomSheet() {
-        val basketBottomSheet = PurchaseBasketFragment()
-        basketBottomSheet.show(parentFragmentManager, PurchaseBasketFragment.TAG)
+    private fun initProgressAnimation() {
+        val progressBar = binding.pgBasket
+        val anim =
+            AnimateProgressBar(progressBar, 0f, (viewModel.purchaseProgress.value ?: 0).toFloat())
+        anim.duration = 1500
+        progressBar.startAnimation(anim)
     }
 
     override fun onDestroyView() {
@@ -60,6 +52,6 @@ class PurchaseFragment : BottomSheetDialogFragment() {
     }
 
     companion object {
-        const val TAG = "BottomSheetPurchase"
+        const val TAG = "BottomSheetPurchaseBasket"
     }
 }
