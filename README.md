@@ -1,5 +1,5 @@
 # 시연 영상 📽
-
+https://github.com/DO-SOPT-CDS-APP-7/Kurly-AOS/assets/91793891/d5370104-51cc-4d9c-a401-2ab9a67fade4
 
 # Contributors 💜
 |View|담당자||
