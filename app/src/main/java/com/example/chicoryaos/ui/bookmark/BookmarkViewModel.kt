@@ -21,14 +21,14 @@ class BookmarkViewModel : ViewModel() {
     val recommendProduct: LiveData<List<ResponseRecommendBookmarkDTO.Data>> = _recommendProduct
 
     init {
-        getRelatedProductData()
-        getRecommendProductData()
+        getRelatedBookmarkProductData()
+        getRecommendBookmarkProductData()
     }
 
-    private fun getRelatedProductData() {
+    private fun getRelatedBookmarkProductData() {
         viewModelScope.launch {
             kotlin.runCatching {
-                authService.getRelatedProduct(1, 1, 3)
+                authService.getRelatedBookmarkProduct(1, 1, 3)
             }.onSuccess {
                 if (it.isSuccessful) {
                     _relatedProduct.value = it.body()!!.data
@@ -41,10 +41,10 @@ class BookmarkViewModel : ViewModel() {
         }
     }
 
-    private fun getRecommendProductData() {
+    private fun getRecommendBookmarkProductData() {
         viewModelScope.launch {
             kotlin.runCatching {
-                authService.getRecommendProduct(1)
+                authService.getRecommendBookmarkProduct(1)
             }.onSuccess {
                 if (it.isSuccessful) {
                     _recommendProduct.value = it.body()!!.data

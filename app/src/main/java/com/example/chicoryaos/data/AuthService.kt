@@ -20,8 +20,15 @@ interface AuthService {
         @Query("size") size: Int,
     ): Response<ResponseRelatedBookmarkDTO>
 
+    @GET("/product/{productId}/related")
+    suspend fun getRelatedBookmarkProduct(
+        @Path("productId") productId: Int,
+        @Query("page") page: Int,
+        @Query("size") size: Int,
+    ): Response<ResponseRelatedBookmarkDTO>
+
     @GET("/product/{productId}/recommend")
-    suspend fun getRecommendProduct(
+    suspend fun getRecommendBookmarkProduct(
         @Path("productId") productId: Int,
     ): Response<ResponseRecommendBookmarkDTO>
 }

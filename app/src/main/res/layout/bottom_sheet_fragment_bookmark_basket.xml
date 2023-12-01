@@ -15,12 +15,12 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/cl_bookmark_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_top_corner">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_top_corner">
+            android:layout_height="match_parent">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/mcv_wish_list_drag_handle"
