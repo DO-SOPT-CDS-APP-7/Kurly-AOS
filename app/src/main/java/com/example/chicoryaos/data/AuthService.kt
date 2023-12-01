@@ -1,12 +1,16 @@
 package com.example.chicoryaos.data
 
+import com.example.chicoryaos.model.RequestPostDTO
+import com.example.chicoryaos.model.ResponsePostDTO
 import com.example.chicoryaos.model.ResponseProductDTO
-import com.example.chicoryaos.model.ResponseRecommendBookmarkDTO
-import com.example.chicoryaos.model.ResponseRelatedBookmarkDTO
-import com.example.chicoryaos.model.ResponseRelatedProductDTO
+import com.example.chicoryaos.model.ResponseRelatedDTO
 import retrofit2.Call
 import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
