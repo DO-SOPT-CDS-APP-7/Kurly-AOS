@@ -6,8 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.chicoryaos.data.ApiFactory.ServicePool.authService
+import com.example.chicoryaos.model.ResponseRelatedDTO
 import com.example.chicoryaos.model.RequestPostDTO
-import com.example.chicoryaos.model.ResponseRelatedProductDTO
 import com.example.chicoryaos.util.extensions.PriceFormatter
 import kotlinx.coroutines.launch
 
@@ -27,9 +27,8 @@ class PurchaseViewModel : ViewModel() {
     val freePrice: LiveData<Int>
         get() = _freePrice
 
-    // 서버 연결 저장하는 변수
-    private val _product: MutableLiveData<List<ResponseRelatedProductDTO.Data>> = MutableLiveData()
-    val product: LiveData<List<ResponseRelatedProductDTO.Data>> = _product
+    private val _product: MutableLiveData<List<ResponseRelatedDTO.Data>> = MutableLiveData()
+    val product: LiveData<List<ResponseRelatedDTO.Data>> = _product
 
     init {
         getRelatedProductData()
@@ -42,7 +41,7 @@ class PurchaseViewModel : ViewModel() {
                 authService.getRelatedProduct(1, 1, 3)
             }.onSuccess {
                 if (it.isSuccessful) {
-                    _product.value = it.body()!!.data
+                    _product.value = it.body()?.data
                 } else {
                     Log.d("server error", it.code().toString())
                 }

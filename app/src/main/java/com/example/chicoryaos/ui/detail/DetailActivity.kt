@@ -1,33 +1,53 @@
 package com.example.chicoryaos.ui.detail
 
 import BookmarkFragment
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ScrollView
 import androidx.activity.viewModels
 import com.example.chicoryaos.R
 import com.example.chicoryaos.databinding.ActivityDetailBinding
 import com.example.chicoryaos.ui.purchase.PurchaseFragment
+import com.example.chicoryaos.ui.purchase.receipt.PurchaseReceiptActivity
 import com.example.chicoryaos.util.CustomBookmarkSnackbar
 import com.example.chicoryaos.util.binding.BindingActivity
 
 class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_detail) {
     private val viewModel by viewModels<DetailViewModel>()
+    private var detailRelatedAdapter: DetailRelatedAdapter? = null
     private var isBookmarked = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.vm = viewModel
+        initRecommendProfileAdapter()
         initClickListener()
-        viewModel.produce.observe(this) {
-            Log.e("kang", viewModel.produce.value.toString())
+        initProductListObserver()
+    }
+
+    private fun initRecommendProfileAdapter() {
+        detailRelatedAdapter = DetailRelatedAdapter()
+        binding.rvDetailOtherConsumer.adapter = detailRelatedAdapter
+    }
+
+    private fun initProductListObserver() {
+        viewModel.relatedProductList.observe(this) {
+            submitHomeProfileAdapterList()
         }
+    }
+
+    private fun submitHomeProfileAdapterList() {
+        detailRelatedAdapter?.submitList(viewModel.relatedProductList.value)
     }
 
     private fun initClickListener() {
         initPurchaseBtnClickListener()
         initBookmarkBtnClickListener()
         initFabBtnClickListener()
+        binding.btnDetailTopBarCart.setOnClickListener {
+            val intentToReceipt = Intent(this, PurchaseReceiptActivity::class.java)
+            startActivity(intentToReceipt)
+        }
     }
 
     private fun initFabBtnClickListener() {

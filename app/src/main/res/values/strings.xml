@@ -4,6 +4,7 @@
     <string name="ku_percent">%</string>
     <string name="ku_won">원</string>
     <string name="other_consumer_title">다른 고객이 함께 본 상품</string>
+    <string name="ku_add_cart">담기</string>
 
     <!-- detail-->
     <string name="detail_btn_purchase">구매하기</string>
@@ -71,6 +72,8 @@
     <string name="receipt_coupon_text">쿠폰/적립금은 주문서에서 사용 가능합니다</string>
     <string name="receipt_svae_text">최대 236원 적립</string>
     <string name="receipt_choose_all_text">전체선택(1/1)</string>
+    <string name="receipt_add_product">상품을 담아주세요</string>
+    <string name="receipt_error_default">장바구니에 담긴 상품이 없습니다</string>
     <string name="purchase_middle_title_text">베테랑의 대표 메뉴를 집에서</string>
     <string name="basket_save_text">담기</string>
     <string name="basket_other_see_text">다른 고객이 함께 본 상품</string>
