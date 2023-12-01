@@ -38,7 +38,7 @@ class PurchaseReceiptActivity :
 
     private fun initGetIntent() {
         val priceEntity =
-            intent.getParcelable<PriceEntity>(PurchaseBasketFragment.TAG, PriceEntity::class.java)
+            intent.getParcelable(PurchaseBasketFragment.TAG, PriceEntity::class.java)
 
         if (priceEntity != null) {
             with(viewModel) {

@@ -15,6 +15,10 @@ class PurchaseReceiptViewModel : ViewModel() {
     val count: LiveData<Int>
         get() = _count
 
+    private val _totalPrice = MutableLiveData(0)
+    val totalPrice: LiveData<Int>
+        get() = _totalPrice
+
     private var originPrice = 0
 
     val calculatePrice = MutableLiveData<String>()
@@ -64,8 +68,8 @@ class PurchaseReceiptViewModel : ViewModel() {
 
     private fun updateTotalPrice() {
         val totalCount = _count.value ?: 0
-        val totalPrice = totalCount * originPrice
-        val formatTotalPrice = PriceFormatter.formatPrice(totalPrice)
+        _totalPrice.value = totalCount * originPrice
+        val formatTotalPrice = totalPrice.value?.let { PriceFormatter.formatPrice(it) } ?: PriceFormatter.formatPrice(0)
         calculatePrice.postValue(formatTotalPrice)
     }
 
