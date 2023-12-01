@@ -4,6 +4,7 @@
     <string name="ku_percent">%</string>
     <string name="ku_won">원</string>
     <string name="other_consumer_title">다른 고객이 함께 본 상품</string>
+    <string name="ku_add_cart">담기</string>
 
     <!-- detail-->
     <string name="detail_btn_purchase">구매하기</string>
