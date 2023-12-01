@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.ChicoryAOS" parent="Theme.Material3.Light.NoActionBar">
         <!-- Primary brand color. -->
@@ -18,6 +18,10 @@
 
     <style name="ShapeAppearanceOverlay.App.CornerRadius2and5" parent="">
         <item name="cornerSize">2.5dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerRadius4" parent="">
+        <item name="cornerSize">4dp</item>
     </style>
 
 </resources>
