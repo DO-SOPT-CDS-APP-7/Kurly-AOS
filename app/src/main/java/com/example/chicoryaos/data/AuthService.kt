@@ -1,10 +1,16 @@
 package com.example.chicoryaos.data
 
+import com.example.chicoryaos.model.RequestPostDTO
+import com.example.chicoryaos.model.ResponsePostDTO
 import com.example.chicoryaos.model.ResponseProductDTO
 import com.example.chicoryaos.model.ResponseRelatedProductDTO
 import retrofit2.Call
 import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -18,4 +24,15 @@ interface AuthService {
         @Query("page") page: Int,
         @Query("size") size: Int,
     ): Response<ResponseRelatedProductDTO>
+
+    @POST("/cart")
+    suspend fun postProduct(
+        @Header("X-Auth-id") authId: Int,
+        @Body request: RequestPostDTO,
+    ): Response<ResponsePostDTO>
+
+    @DELETE("/cart")
+    suspend fun deletePostProduct(
+        @Header("X-Auth-id") authId: Int,
+    ): Response<Unit>
 }
