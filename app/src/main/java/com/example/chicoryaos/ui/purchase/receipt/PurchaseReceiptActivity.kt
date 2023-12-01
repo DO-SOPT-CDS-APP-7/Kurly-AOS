@@ -33,8 +33,8 @@ class PurchaseReceiptActivity :
 
         if (priceEntity != null) {
             with(viewModel) {
-                count.value = priceEntity.count
-                setPurchasePrice(priceEntity.price)
+                setProductEntity(priceEntity)
+                setPurchasePrice(priceEntity.discountedPrice)
             }
         }
     }

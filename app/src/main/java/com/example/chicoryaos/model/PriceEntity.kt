@@ -5,8 +5,11 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class PriceEntity(
-    val id: Int,
-    val name: String,
+    var id: Int,
     var count: Int,
-    var price: Int,
+    var deliveryType: String,
+    var productName: String,
+    var originalPrice: Int,
+    var discountedPrice: Int,
+    var imageUrl: String?,
 ) : Parcelable

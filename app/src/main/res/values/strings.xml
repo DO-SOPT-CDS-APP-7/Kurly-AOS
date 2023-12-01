@@ -71,5 +71,11 @@
     <string name="receipt_coupon_text">쿠폰/적립금은 주문서에서 사용 가능합니다</string>
     <string name="receipt_svae_text">최대 236원 적립</string>
     <string name="receipt_choose_all_text">전체선택(1/1)</string>
+    <string name="purchase_middle_title_text">베테랑의 대표 메뉴를 집에서</string>
+    <string name="basket_save_text">담기</string>
+    <string name="basket_other_see_text">다른 고객이 함께 본 상품</string>
+    <string name="basket_more_free_text">더 담으면 무료배송</string>
+    <string name="basket_direct_buy_str">바로 구매</string>
+    <string name="basekt_save_product_text">장바구니에 상품을 담았습니다.</string>
 
 </resources>
