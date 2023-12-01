@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.chicoryaos.data.ApiFactory.ServicePool.authService
+import com.example.chicoryaos.model.RequestPostDTO
 import com.example.chicoryaos.model.ResponseRelatedProductDTO
 import com.example.chicoryaos.util.extensions.PriceFormatter
 import kotlinx.coroutines.launch
@@ -51,6 +52,29 @@ class PurchaseViewModel : ViewModel() {
         }
     }
 
+    private fun postPurchaseProduct() {
+        val productId = 1.toString()
+        val count = (_count.value ?: 1).toString()
+
+        viewModelScope.launch {
+            runCatching {
+                authService.postProduct(
+                    1,
+                    RequestPostDTO(productId, count),
+                )
+            }.onSuccess {
+                if (it.isSuccessful) {
+                    val testValue = it.body()?.data.toString()
+                    Log.d("server success", testValue)
+                } else {
+                    Log.d("server error", it.code().toString())
+                }
+            }.onFailure {
+                Log.d("server fail", it.message.toString())
+            }
+        }
+    }
+
     private fun updateTotalPrice() {
         val totalCount = _count.value ?: 0
         val totalPrice = totalCount * price
@@ -80,5 +104,9 @@ class PurchaseViewModel : ViewModel() {
         val maxTotalPrice = 15000
         _purchaseProgress.value = (totalPrice * 100) / maxTotalPrice
         _freePrice.value = maxOf(0, maxTotalPrice - totalPrice)
+    }
+
+    fun onPurchaseButtonClick() {
+        postPurchaseProduct()
     }
 }
