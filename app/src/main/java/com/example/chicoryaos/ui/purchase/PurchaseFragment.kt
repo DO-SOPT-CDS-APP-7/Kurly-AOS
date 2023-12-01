@@ -67,6 +67,7 @@ class PurchaseFragment : BottomSheetDialogFragment() {
         binding.btnPurchaseBasket.setOnClickListener {
             dismiss()
             showBasketBottomSheet()
+            purchaseViewModel.onPurchaseButtonClick()
         }
     }
 

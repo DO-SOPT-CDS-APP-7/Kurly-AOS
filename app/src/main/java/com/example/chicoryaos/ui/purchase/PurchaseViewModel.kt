@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.chicoryaos.data.ApiFactory.ServicePool.authService
 import com.example.chicoryaos.model.ResponseRelatedDTO
+import com.example.chicoryaos.model.RequestPostDTO
 import com.example.chicoryaos.util.extensions.PriceFormatter
 import kotlinx.coroutines.launch
 
@@ -26,7 +27,6 @@ class PurchaseViewModel : ViewModel() {
     val freePrice: LiveData<Int>
         get() = _freePrice
 
-    // 서버 연결 저장하는 변수
     private val _product: MutableLiveData<List<ResponseRelatedDTO.Data>> = MutableLiveData()
     val product: LiveData<List<ResponseRelatedDTO.Data>> = _product
 
@@ -42,6 +42,29 @@ class PurchaseViewModel : ViewModel() {
             }.onSuccess {
                 if (it.isSuccessful) {
                     _product.value = it.body()?.data
+                } else {
+                    Log.d("server error", it.code().toString())
+                }
+            }.onFailure {
+                Log.d("server fail", it.message.toString())
+            }
+        }
+    }
+
+    private fun postPurchaseProduct() {
+        val productId = 1.toString()
+        val count = (_count.value ?: 1).toString()
+
+        viewModelScope.launch {
+            runCatching {
+                authService.postProduct(
+                    1,
+                    RequestPostDTO(productId, count),
+                )
+            }.onSuccess {
+                if (it.isSuccessful) {
+                    val testValue = it.body()?.data.toString()
+                    Log.d("server success", testValue)
                 } else {
                     Log.d("server error", it.code().toString())
                 }
@@ -80,5 +103,9 @@ class PurchaseViewModel : ViewModel() {
         val maxTotalPrice = 15000
         _purchaseProgress.value = (totalPrice * 100) / maxTotalPrice
         _freePrice.value = maxOf(0, maxTotalPrice - totalPrice)
+    }
+
+    fun onPurchaseButtonClick() {
+        postPurchaseProduct()
     }
 }
