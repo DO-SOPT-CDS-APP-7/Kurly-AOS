@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.example.chicoryaos.ui.purchase.receipt.PurchaseReceiptViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_receipt_start_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="25dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_receipt_start_50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="50dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_receipt_end_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="25dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_receipt_end_50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="50dp" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_receipt_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_back"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_receipt_title_top"
+                style="@style/AndroidTitleSemibold14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/receipt_text_basket"
+                android:textColor="@color/ku_gray7"
+                app:layout_constraintBottom_toBottomOf="@id/btn_receipt_back"
+                app:layout_constraintStart_toEndOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toTopOf="@id/btn_receipt_back" />
+
+            <ImageView
+                android:id="@+id/iv_receipt_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/ic_location_default"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_25"
+                app:layout_constraintTop_toTopOf="@id/tv_receipt_location" />
+
+            <TextView
+                android:id="@+id/tv_receipt_location"
+                style="@style/AndroidBodyRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:maxLines="2"
+                android:text="@string/receipt_location_text"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/gl_receipt_middle"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_title_top" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_receipt_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.51" />
+
+            <TextView
+                android:id="@+id/btn_receipt_change"
+                style="@style/AndroidBodyRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_gray_stroke_4_rect"
+                android:text="@string/basket_change_text"
+                android:textColor="@color/ku_gray7"
+                app:layout_constraintBottom_toBottomOf="@id/tv_receipt_location"
+                app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_25"
+                app:layout_constraintTop_toTopOf="@id/tv_receipt_location" />
+
+            <TextView
+                android:id="@+id/tv_receipt_star_delivery"
+                style="@style/AndroidCaptionSemibold12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="@string/receipt_star_delivery"
+                android:textColor="@color/ku_purple"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_location" />
+
+            <TextView
+                android:id="@+id/tv_receipt_choose_all"
+                style="@style/AndroidTitleRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/receipt_choose_all_text"
+                android:textColor="@color/ku_gray6"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_star_delivery" />
+
+            <TextView
+                android:id="@+id/tv_receipt_choose_delete"
+                style="@style/AndroidTitleRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:letterSpacing="-0.045"
+                android:padding="10dp"
+                android:text="@string/receipt_choose_delete"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintBottom_toBottomOf="@id/tv_receipt_choose_all"
+                app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_25"
+                app:layout_constraintTop_toTopOf="@id/tv_receipt_choose_all" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_top"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="17dp"
+                app:dividerColor="@color/ku_gray2"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_choose_all" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_snow_3x"
+                app:layout_constraintBottom_toBottomOf="@id/tv_receipt_frozen"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_25"
+                app:layout_constraintTop_toTopOf="@id/tv_receipt_frozen" />
+
+            <TextView
+                android:id="@+id/tv_receipt_frozen"
+                style="@style/AndroidHeading3Semibold18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/receipt_frozen_text"
+                android:textColor="@color/ku_gray6"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toBottomOf="@id/divider_top" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cb_receipt_selector"
+                android:layout_width="25dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/selector_checkbox_purple"
+                android:button="@android:color/transparent"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_25"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_frozen" />
+
+            <TextView
+                android:id="@+id/tv_receipt_item_name"
+                style="@style/AndroidTitleRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="[전주 베테랑]칼국수"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintBottom_toBottomOf="@id/cb_receipt_selector"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toTopOf="@id/cb_receipt_selector" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_receipt_item"
+                android:layout_width="54dp"
+                android:layout_height="68dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/ku_gray3"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_item_name"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerRadius2and5" />
+
+            <TextView
+                android:id="@+id/tv_receipt_item_price"
+                style="@style/AndroidCaptionSemibold12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="@{@string/purchase_won_text(vm.calculatePrice)}"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintStart_toEndOf="@id/iv_receipt_item"
+                app:layout_constraintTop_toTopOf="@id/iv_receipt_item" />
+
+            <TextView
+                android:id="@+id/tv_receipt_original_price"
+                style="@style/AndroidStrikethroughRegular10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:text="@{@string/purchase_won_text(vm.calculatePrice)}"
+                android:textColor="@color/ku_gray5"
+                app:layout_constraintBottom_toBottomOf="@id/tv_receipt_item_price"
+                app:layout_constraintStart_toEndOf="@id/tv_receipt_item_price"
+                app:layout_constraintTop_toTopOf="@id/tv_receipt_item_price"
+                tools:text="4,200원" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:background="@color/ku_gray5"
+                app:layout_constraintBottom_toBottomOf="@id/tv_receipt_original_price"
+                app:layout_constraintEnd_toEndOf="@id/tv_receipt_original_price"
+                app:layout_constraintStart_toStartOf="@id/tv_receipt_original_price"
+                app:layout_constraintTop_toTopOf="@id/tv_receipt_original_price" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/frame_plus_minus"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:backgroundTint="@color/ku_white"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_receipt_item"
+                app:layout_constraintStart_toStartOf="@id/tv_receipt_item_price"
+                app:strokeColor="@color/ku_gray4"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btn_minus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:onClick="@{()->vm.countDecrease()}"
+                        android:paddingVertical="6dp"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="5dp"
+                        android:src="@drawable/ic_button_minus"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_count_num"
+                        style="@style/AndroidTitleSemibold14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@{vm.count.toString()}"
+                        android:textColor="@color/ku_gray6"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btn_plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:onClick="@{()->vm.countIncrease()}"
+                        android:paddingVertical="6dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="6dp"
+                        android:src="@drawable/ic_button_plus"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_middle"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginTop="30dp"
+                app:dividerColor="@color/ku_gray2"
+                app:layout_constraintTop_toBottomOf="@id/iv_receipt_item" />
+
+            <TextView
+                android:id="@+id/tv_receipt_price_text"
+                style="@style/AndroidTitleRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:letterSpacing="-0.045"
+                android:text="@string/receipt_price_item_text"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toBottomOf="@id/divider_middle" />
+
+            <TextView
+                android:id="@+id/tv_receipt_price_won"
+                style="@style/AndroidTitleRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:letterSpacing="-0.045"
+                android:text="5,900원"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_50"
+                app:layout_constraintTop_toBottomOf="@id/divider_middle" />
+
+            <TextView
+                android:id="@+id/tv_receipt_sale_text"
+                style="@style/AndroidTitleRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:letterSpacing="-0.045"
+                android:text="@string/receipt_sale_text"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_price_text" />
+
+            <TextView
+                android:id="@+id/tv_receipt_sale_won"
+                style="@style/AndroidTitleRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:letterSpacing="-0.045"
+                android:text="5,900원"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintBottom_toBottomOf="@id/tv_receipt_sale_text"
+                app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_50"
+                app:layout_constraintTop_toTopOf="@id/tv_receipt_sale_text" />
+
+            <TextView
+                android:id="@+id/tv_receipt_delivery_text"
+                style="@style/AndroidTitleRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:letterSpacing="-0.045"
+                android:text="@string/receipt_delivery_text"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_sale_text" />
+
+            <TextView
+                android:id="@+id/tv_receipt_delivery_won"
+                style="@style/AndroidTitleRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:letterSpacing="-0.045"
+                android:text="@{@string/purchase_won_text(0)}"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintBottom_toBottomOf="@id/tv_receipt_delivery_text"
+                app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_50"
+                app:layout_constraintTop_toTopOf="@id/tv_receipt_delivery_text" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="18dp"
+                app:dividerColor="@color/ku_gray_C6C6C6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_delivery_text" />
+
+            <TextView
+                android:id="@+id/tv_receipt_final_price_text"
+                style="@style/AndroidTitleRegular14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:letterSpacing="-0.045"
+                android:text="@string/receipt_final_price_text"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintStart_toStartOf="@id/gl_receipt_start_50"
+                app:layout_constraintTop_toBottomOf="@id/divider_bottom" />
+
+            <TextView
+                android:id="@+id/tv_receipt_final_price_won"
+                style="@style/AndroidHeading3Semibold18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:letterSpacing="-0.045"
+                android:text="@{@string/purchase_won_text(vm.calculatePrice)}"
+                android:textColor="@color/ku_gray6"
+                app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_50"
+                app:layout_constraintTop_toTopOf="@id/tv_receipt_final_price_text" />
+
+            <TextView
+                android:id="@+id/tv_receipt_coupon_text"
+                style="@style/AndroidCaptionRegular12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:letterSpacing="-0.045"
+                android:text="@string/receipt_coupon_text"
+                android:textColor="@color/ku_gray5"
+                app:layout_constraintEnd_toEndOf="@id/gl_receipt_end_50"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_final_price_text" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_receipt_save"
+                style="@style/AndroidTitleSemibold14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/ku_gray1"
+                android:elevation="0dp"
+                android:paddingVertical="14dp"
+                android:text="@string/receipt_svae_text"
+                android:textColor="@color/ku_gray6"
+                app:cornerRadius="4dp"
+                app:layout_constraintBottom_toTopOf="@id/btn_receipt_order"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_coupon_text"
+                app:rippleColor="@color/ku_purple3" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_receipt_order"
+                style="@style/AndroidTitleSemibold14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="25dp"
+                android:backgroundTint="@color/ku_purple"
+                android:paddingVertical="14dp"
+                android:text="@{@string/receipt_price_text(vm.calculatePrice)}"
+                android:textColor="@color/ku_white"
+                app:cornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_receipt_save"
+                app:rippleColor="@color/ku_purple3"
+                tools:text="주문하기" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
