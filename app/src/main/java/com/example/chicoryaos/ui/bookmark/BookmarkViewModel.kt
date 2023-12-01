@@ -44,7 +44,7 @@ class BookmarkViewModel : ViewModel() {
     private fun getRecommendProductData() {
         viewModelScope.launch {
             kotlin.runCatching {
-                authService.getRecommendProduct(1, 1, 3)
+                authService.getRecommendProduct(1)
             }.onSuccess {
                 if (it.isSuccessful) {
                     _recommendProduct.value = it.body()!!.data

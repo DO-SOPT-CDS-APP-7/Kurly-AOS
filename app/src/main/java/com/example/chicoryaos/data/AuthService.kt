@@ -23,7 +23,5 @@ interface AuthService {
     @GET("/product/{productId}/recommend")
     suspend fun getRecommendProduct(
         @Path("productId") productId: Int,
-        @Query("page") page: Int,
-        @Query("size") size: Int,
     ): Response<ResponseRecommendBookmarkDTO>
 }
