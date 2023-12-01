@@ -24,6 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.chicoryaos.ui.purchase.receipt.PurchaseReceiptActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.chicoryaos.ui.purchase.receipt.PurchaseCompletedActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

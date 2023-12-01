@@ -251,6 +251,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mcv_save_yello"
+            app:rippleColor="@color/ku_purple3"
             tools:text="구매하기" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
