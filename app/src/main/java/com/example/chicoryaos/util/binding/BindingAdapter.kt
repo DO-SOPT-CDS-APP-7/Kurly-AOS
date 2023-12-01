@@ -22,20 +22,11 @@ object BindingAdapter {
     fun ImageView.setCoilImage(imgUrl: String?) {
         this.let {
             it.load(imgUrl) {
-                // svg인 경우 분기 처리를 해야 함.
                 if (imgUrl?.endsWith(".svg") == true) {
                     decoderFactory { result, options, _ -> SvgDecoder(result.source, options) }
                 }
                 crossfade(true)
             }
-        }
-    }
-
-    @BindingAdapter("formattedPrice")
-    @JvmStatic
-    fun TextView.setFormattedPrice(amount: Int) {
-        this.let {
-            it.text = "${PriceFormatter.formatPrice(amount)}원"
         }
     }
 

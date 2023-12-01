@@ -1,9 +1,6 @@
 package com.example.chicoryaos.data
 
 import com.example.chicoryaos.model.ResponseProductDTO
-import com.example.chicoryaos.model.ResponseRecommendBookmarkDTO
-import com.example.chicoryaos.model.ResponseRelatedBookmarkDTO
-import com.example.chicoryaos.model.ResponseRelatedProductDTO
 import com.example.chicoryaos.model.ResponseRelatedDTO
 import retrofit2.Call
 import retrofit2.Response
@@ -22,15 +19,8 @@ interface AuthService {
         @Query("size") size: Int,
     ): Response<ResponseRelatedDTO>
 
-    @GET("/product/{productId}/related")
-    suspend fun getRelatedBookmarkProduct(
-        @Path("productId") productId: Int,
-        @Query("page") page: Int,
-        @Query("size") size: Int,
-    ): Response<ResponseRelatedBookmarkDTO>
-
     @GET("/product/{productId}/recommend")
     suspend fun getRecommendBookmarkProduct(
         @Path("productId") productId: Int,
-    ): Response<ResponseRecommendBookmarkDTO>
+    ): Response<ResponseRelatedDTO>
 }
