@@ -161,14 +161,6 @@
                 app:dividerColor="@color/ku_gray2"
                 app:layout_constraintTop_toBottomOf="@id/tv_receipt_choose_all" />
 
-            <androidx.constraintlayout.helper.widget.Flow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="visible"
-                app:constraint_referenced_ids="iv_receipt_frozen,tv_receipt_frozen,iv_receipt_item,tv_receipt_item_name,tv_receipt_item_price,divider_receipt_price,tv_receipt_original_price,frame_plus_minus"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/iv_receipt_frozen"
                 android:layout_width="20dp"
