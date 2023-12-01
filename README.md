@@ -4,9 +4,9 @@
 # Contributors 💜
 |View|담당자||
 |------|---|---|
-|Detail|강희 @stellar-halo|<img src="https://avatars.githubusercontent.com/u/91793891?v=4  width="200" height="200"/>|
-|Bookmark|호연 @pump9918|<img src="https://avatars.githubusercontent.com/u/125239880?v=4  width="200" height="200"/>|
-|Purchase|찬우 @chanubc| !<img src="https://avatars.githubusercontent.com/u/106955456?v=4  width="200" height="200"/>|
+|Detail|강희 @stellar-halo|<img src="https://avatars.githubusercontent.com/u/91793891?v=4"  width="200" height="200"/>|
+|Bookmark|호연 @pump9918|<img src="https://avatars.githubusercontent.com/u/125239880?v=4"  width="200" height="200"/>|
+|Purchase|찬우 @chanubc| !<img src="https://avatars.githubusercontent.com/u/106955456?v=4"  width="200" height="200"/>|
 
 # Code Convention 🎇
 
