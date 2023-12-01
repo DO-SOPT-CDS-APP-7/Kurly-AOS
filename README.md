@@ -2,10 +2,11 @@
 
 
 # Contributors 💜
-
-1. Detail - 강희
-2. Bookmark - 호연
-3. Purchase - 찬우
+|View|사진|담당자|
+|------|---|---|
+|Detail|강희|@stellar-halo|
+|Bookmark|호연|@pump9918|
+|Purchase|찬우|@chanubc|
 
 # Code Convention 🎇
 
