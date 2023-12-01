@@ -6,7 +6,7 @@
 |------|---|---|
 |Detail|강희|@stellar-halo|
 |Bookmark|호연|@pump9918|
-|Purchase|찬우 @chanubc| https://avatars.githubusercontent.com/u/106955456?v=4 |
+|Purchase|찬우 @chanubc| ![profile](https://avatars.githubusercontent.com/u/106955456?v=4) |
 
 # Code Convention 🎇
 
