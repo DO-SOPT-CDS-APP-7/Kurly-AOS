@@ -8,13 +8,17 @@
         <variable
             name="viewModel"
             type="com.example.chicoryaos.ui.purchase.PurchaseViewModel" />
+
+        <variable
+            name="vmDetail"
+            type="com.example.chicoryaos.ui.detail.DetailViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/Widget.Material3.BottomSheet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/ku_white"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <com.google.android.material.card.MaterialCardView
@@ -33,11 +37,13 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_purchase_item"
+            setCoilImage="@{vmDetail.produce.imageURL}"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="16dp"
             android:background="@color/ku_gray3"
+            android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mcv_purchase_drag_handle"
@@ -50,18 +56,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
             android:letterSpacing="-0.045"
-            android:text="[전주 베테랑] 칼국수"
+            android:text="@{vmDetail.produce.productName}"
             android:textColor="@color/ku_gray6"
             app:layout_constraintBottom_toTopOf="@id/tv_img_sub_title"
             app:layout_constraintStart_toEndOf="@id/iv_purchase_item"
-            app:layout_constraintTop_toTopOf="@id/iv_purchase_item" />
+            app:layout_constraintTop_toTopOf="@id/iv_purchase_item"
+            tools:text="[전주 베테랑] 칼국수" />
 
         <TextView
             android:id="@+id/tv_img_sub_title"
             style="@style/AndroidCaptionRegular12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="베테랑의 대표 메뉴를 집에서"
+            android:text="@string/purchase_middle_title_text"
             android:textColor="@color/ku_gray5"
             app:layout_constraintBottom_toBottomOf="@id/iv_purchase_item"
             app:layout_constraintStart_toEndOf="@id/iv_purchase_item"
@@ -85,10 +92,11 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="18dp"
             android:letterSpacing="-0.045"
-            android:text="[전주 베테랑] 칼국수"
+            android:text="@{vmDetail.produce.productName}"
             android:textColor="@color/ku_gray6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_top" />
+            app:layout_constraintTop_toBottomOf="@id/divider_top"
+            tools:text="[전주 베테랑] 칼국수" />
 
         <TextView
             android:id="@+id/tv_sale_price"

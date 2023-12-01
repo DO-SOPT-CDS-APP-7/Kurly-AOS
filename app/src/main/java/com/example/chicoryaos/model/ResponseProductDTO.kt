@@ -10,7 +10,7 @@ data class ResponseProductDTO(
     @SerialName("message")
     val message: String = "",
     @SerialName("data")
-    val data: Product
+    val data: Product,
 ) {
     @Serializable
     data class Product(
@@ -27,6 +27,6 @@ data class ResponseProductDTO(
         @SerialName("sellerName")
         val sellerName: String = "",
         @SerialName("imageURL")
-        val imageURL: String? = ""
+        val imageURL: String? = "",
     )
 }

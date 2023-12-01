@@ -72,5 +72,23 @@
     <string name="receipt_coupon_text">쿠폰/적립금은 주문서에서 사용 가능합니다</string>
     <string name="receipt_svae_text">최대 236원 적립</string>
     <string name="receipt_choose_all_text">전체선택(1/1)</string>
+    <string name="purchase_middle_title_text">베테랑의 대표 메뉴를 집에서</string>
+    <string name="basket_save_text">담기</string>
+    <string name="basket_other_see_text">다른 고객이 함께 본 상품</string>
+    <string name="basket_more_free_text">더 담으면 무료배송</string>
+    <string name="basket_direct_buy_str">바로 구매</string>
+    <string name="basekt_save_product_text">장바구니에 상품을 담았습니다.</string>
 
+    <!-- wish list -->
+    <string name="wish_list_other_consumer_title">다른 고객이 함께 본 상품</string>
+    <string name="wish_list_puchase_with_title">함께 구매하면 좋은 상품</string>
+    <string name="item_wish_list_ment">샛별배송</string>
+    <string name="item_wish_list_title">[시골보쌈과 감자옹심이] 감자는 역시 강원도, 감자먹으러 오세요</string>
+    <string name="item_sale_price">%s원</string>
+    <string name="wish_list_btn_detail_relative">연관상품 더보기</string>
+
+    <!-- bookmark toast -->
+    <string name="snackbar_bookmark_plus_ment">찜한 상품에 추가했어요</string>
+    <string name="snackbar_bookmark_go_ment">바로가기</string>
+    <string name="snackbar_bookmark_delete_ment">찜한 상품에서 삭제했어요</string>
 </resources>
