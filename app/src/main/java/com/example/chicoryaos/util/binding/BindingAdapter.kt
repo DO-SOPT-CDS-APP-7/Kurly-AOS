@@ -38,26 +38,4 @@ object BindingAdapter {
             it.text = "${PriceFormatter.formatPrice(amount)}원"
         }
     }
-
-    // 중복시 아래 삭제 가능
-    @BindingAdapter("setCoilImage")
-    @JvmStatic
-    fun ImageView.setCoilImage(imgUrl: String?) {
-        this.let {
-            it.load(imgUrl) {
-                if (imgUrl?.endsWith(".svg") == true) {
-                    decoderFactory { result, options, _ -> SvgDecoder(result.source, options) }
-                }
-                crossfade(true)
-            }
-        }
-    }
-
-    @BindingAdapter("formattedPrice")
-    @JvmStatic
-    fun TextView.setFormattedPrice(amount: Int) {
-        this.let {
-            it.text = "${PriceFormatter.formatPrice(amount)}원"
-        }
-    }
 }
